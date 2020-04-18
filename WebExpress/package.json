@@ -1,0 +1,42 @@
+{
+  "name": "web-xpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "set DEBUG=app,app:* && nodemon app.js",
+    "dev": "set DEBUG=app,app:* && nodemon  -r dotenv/config -L app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "cookie-parser": "^1.4.5",
+    "debug": "^2.6.6",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "jquery": "^3.5.0",
+    "mongodb": "^3.5.6",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.3",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "delay": "2500"
+  }
+}
