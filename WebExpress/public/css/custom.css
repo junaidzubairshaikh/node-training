@@ -1,0 +1,12 @@
+html body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    width: 50%;
+    margin: auto;
+    font-size: large;
+    color: blueviolet;
+}
