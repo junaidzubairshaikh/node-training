@@ -8,7 +8,7 @@ const sinon=require('sinon');
 chai.use(require('chai-as-promised'));
 chai.should();
 
-describe.skip('Auth Controller',()=>{
+describe('Auth Controller',()=>{
     it('Check is Authorized should be false',()=>{
         assert.equal(false,authController.isAuthorized(['user'],'admin'));
     });
@@ -43,7 +43,7 @@ describe.skip('Auth Controller',()=>{
                 }
             }
         })
-        it('Auth controller getIndex should be called',function(){
+        it.skip('Auth controller getIndex should be called',function(){
             
             const req={user:user};
             let res = {
@@ -53,7 +53,7 @@ describe.skip('Auth Controller',()=>{
             authController.getIndex(req,res);
             res.renderME.calledOnce.should.be.true;
         });
-        it('Auth controller getINdex with index arg should be called',function(){
+        it.skip('Auth controller getINdex with index arg should be called',function(){
             let isAuth=sinon.stub(user,'isAuthorized').returns(true);
             
             const req = {user:user};

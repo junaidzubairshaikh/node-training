@@ -5,30 +5,34 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha './tests/**/*.spec.js'"
+    "test": "mocha ./tests/**/*.spec.js",
+    "coverage": "istanbul cover node_modules/.bin/_mocha.js -- ./tests/**/*",
+    "cover": "nyc --reporter=html npm run test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "chai": "^4.2.0",
-    "chai-as-promised": "^7.1.1",
-    "co": "^4.6.0",
-    "cookie-parser": "^1.4.5",
-    "debug": "^4.1.1",
-    "ejs": "^3.0.2",
-    "express": "^4.17.1",
-    "mocha": "^7.1.1",
-    "mongodb": "^3.5.6",
-    "morgan": "^1.10.0",
-    "rewire": "^5.0.0",
-    "serve-favicon": "^2.5.0",
-    "sinon": "^9.0.2"
+    "body-parser": "~1.15.2",
+    "chai": "3.5.0",
+    "chai-as-promised": "6.0.0",
+    "co": "4.6.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.5.2",
+    "express": "~4.14.0",
+    "mocha": "3.2.0",
+    "mongodb": "2.2.22",
+    "morgan": "~1.7.0",
+    "rewire": "2.5.2",
+    "serve-favicon": "~2.3.0",
+    "sinon": "1.17.7"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2"
+    "eslint-plugin-import": "^2.20.2",
+    "istanbul": "^0.4.5",
+    "nyc": "^15.0.1"
   }
 }

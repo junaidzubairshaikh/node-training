@@ -1,5 +1,5 @@
 
-describe.skip('Testing chai with obj',()=>{
+describe('Testing chai with obj',()=>{
     it('Object should have property name',()=>{
         let obj={name:'Tim',role:'admin'};
         obj.should.have.property('name')

@@ -11,16 +11,15 @@ module.exports = function () {
 
     const callback = function (response) {
       let str = '';
-
+      
       response.on('data', (chunk) => {
         str += chunk;
       });
-
-      console.log('in repos');
-
+      
+      
       response.on('end',
-        () => {
-          // console.log('CALBACk in repos');
+      () => {
+        // console.log('CALBACk in repos',str);
           cb(JSON.parse(str));
         });
     };
@@ -29,7 +28,7 @@ module.exports = function () {
   };
   const getUser = function (userId) {
     return new Promise(((resolve) => {
-      console.log('getUser');
+      // console.log('getUser');
       const options = {
         host: 'api.github.com',
         path: `/users/${userId}`,
@@ -37,7 +36,7 @@ module.exports = function () {
       };
 
       const callback = function (response) {
-        console.log('callback');
+        // console.log('callback');
         let str = '';
 
         response.on('data', (chunk) => {
@@ -49,16 +48,16 @@ module.exports = function () {
           getRepos(userId, (repos) => {
             console.log('repos');
             user.repos = repos;
+               resolve(user);
             
-            resolve(user);
           });
         });
-        response.on('error', (e) => {
-          console.log(`problem with request: ${e.message}`);
-        });
+        // response.on('error', (e) => {
+        //   console.log(`problem with request: ${e.message}`);
+        // });
       };
 
-      console.log(options);
+      // console.log(options);
       https.request(options, callback).end();
     }));
   };

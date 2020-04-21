@@ -1,61 +1,36 @@
-var chaiAsPromised = require("chai-as-promised");
-var chai = require("chai");
+const rewire=require('rewire');
+const GitCtrl= rewire('../../controllers/gitController');
+const gitControler=GitCtrl();
+const chai=require('chai');
+const sinon=require('sinon');
 
-var sinon = require('sinon');
-var PassThrough = require('stream').PassThrough;
-var http = require('https');
-var rewire = require('rewire');
-
-var GitCtrl = rewire('../../controllers/gitController');
-var gitController = GitCtrl();
-
-chai.use(chaiAsPromised);
 chai.should();
 
-describe.skip('GitController', function () {
-    var getUser = {};
-    beforeEach(function(){
-        var gitService = GitCtrl.__get__('gitService');
-        getUser = sinon.spy(gitService, 'getUser');
-        GitCtrl.__set__('gitService', gitService);
+let getUser;
+describe.skip('should get user and repos from git service',function(){
+    
+        beforeEach(function(){
+            let gitService = GitCtrl.__get__('gitService');
+            getUser = sinon.spy(gitService,'getUser');
+            GitCtrl.__set__('gitService', gitService);
+        });
 
-        this.request = sinon.stub(http, 'request');
-        var gitJson = {login:'junaidzubairshaikh'};
-        var repoJson = {name: 'testRepo'};
+        it('should be get called user',function(done){
+            this.timeout(2000);
+            let req = {params:{userId:'junaidzubairshaikh'}};
+            let res = {
+                json:test
+            };
 
-        this.gitResponse = new PassThrough();
-        this.gitResponse.write(JSON.stringify(gitJson));
-        this.gitResponse.end();
+            function test(user){
+                    // console.log('GitCTRL--->', getUser.getCall(0).args[0]);
+                    getUser.calledOnce.should.be.true
+                    user.login.should.equal('junaidzubairshaikh');
+                    done();
+            };
 
-        this.repoResponse = new PassThrough();
-        this.repoResponse.write(JSON.stringify(gitJson));
-        this.repoResponse.end();
+            gitControler.userGet(req,res);
 
-        this.request
-            .onFirstCall().callsArgWith(1,this.gitResponse).returns(new PassThrough())
-            .onSecondCall().callsArgWith(1,this.repoResponse).returns(new PassThrough());
-    });
-
-    it('should get a user and repos', function(done){
-        this.timeout(10000);
-        
-        var res = {json: test};
-        var req = {params:{userId:'junaidzubairshaikh'}};
-
-         gitController.userGet(req, res);
-
-        function test(user){
-            user.login.should.equal('junaidzubairshaikh');
-            console.log( getUser.getCall(0).args);
-            done();
-        }
+        })
 
     })
-
-    afterEach(function(){
-        http.request.restore(); 
-    });
-
-
-});
-
