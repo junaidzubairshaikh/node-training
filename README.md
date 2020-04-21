@@ -1,5 +1,5 @@
 # node-training
-### Following training covered:
+### Following trainings covered:
 
 - https://www.pluralsight.com/courses/nodejs-getting-started
 - https://app.pluralsight.com/library/courses/node-js-express-rest-web-services-update (RestFull)
