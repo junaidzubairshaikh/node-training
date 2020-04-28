@@ -1,0 +1,4084 @@
+{
+  "_shrinkwrap": null,
+  "version": "",
+  "dependencies": {
+    "@angular/cli": {
+      "_from": "@angular/cli",
+      "_id": "@angular/cli@9.0.7",
+      "_inBundle": false,
+      "_integrity": "sha512-/9CUNSSVyTtTNUADZ/VXJDEdhineMN/rfd35w6VsHiob49tKkeOTggaoiSne3RY4VCTqlo7GGf4KhhVXEMGnDQ==",
+      "_location": "/@angular/cli",
+      "_phantomChildren": {},
+      "_requested": {
+        "type": "tag",
+        "registry": true,
+        "raw": "@angular/cli",
+        "name": "@angular/cli",
+        "escapedName": "@angular%2fcli",
+        "scope": "@angular",
+        "rawSpec": "",
+        "saveSpec": "[Circular]",
+        "fetchSpec": "latest"
+      },
+      "_requiredBy": [
+        "#USER"
+      ],
+      "_resolved": "https://registry.npmjs.org/@angular/cli/-/cli-9.0.7.tgz",
+      "_shasum": "67df7b13fd750a8ac142b4ab8488439439385885",
+      "_spec": "@angular/cli",
+      "_where": "D:\\projects\\practice\\10p",
+      "author": {
+        "name": "Angular Authors"
+      },
+      "bin": {
+        "ng": "bin/ng"
+      },
+      "bugs": {
+        "url": "https://github.com/angular/angular-cli/issues"
+      },
+      "deprecated": false,
+      "description": "CLI tool for Angular",
+      "engines": {
+        "node": ">= 10.13.0",
+        "npm": ">= 6.11.0",
+        "yarn": ">= 1.13.0"
+      },
+      "homepage": "https://github.com/angular/angular-cli",
+      "husky": {
+        "hooks": {
+          "pre-push": "node ./bin/devkit-admin hooks/pre-push"
+        }
+      },
+      "keywords": [
+        "angular",
+        "Angular CLI",
+        "devkit",
+        "sdk",
+        "Angular DevKit",
+        "angular-cli"
+      ],
+      "license": "MIT",
+      "main": "lib/cli/index.js",
+      "name": "@angular/cli",
+      "ng-update": {
+        "migrations": "@schematics/angular/migrations/migration-collection.json",
+        "packageGroup": {
+          "@angular/cli": "9.0.7",
+          "@angular-devkit/build-angular": "0.900.7",
+          "@angular-devkit/build-ng-packagr": "0.900.7",
+          "@angular-devkit/build-webpack": "0.900.7",
+          "@angular-devkit/core": "9.0.7",
+          "@angular-devkit/schematics": "9.0.7"
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/angular/angular-cli.git"
+      },
+      "scripts": {
+        "postinstall": "node ./bin/postinstall/script.js"
+      },
+      "version": "9.0.7",
+      "readme": "## Angular CLI\n\n<!-- Badges section here. -->\n[![Dependency Status][david-badge]][david-badge-url]\n[![devDependency Status][david-dev-badge]][david-dev-badge-url]\n\n[![npm](https://img.shields.io/npm/v/%40angular/cli.svg)][npm-badge-url]\n[![npm](https://img.shields.io/npm/v/%40angular/cli/next.svg)][npm-badge-url]\n[![npm](https://img.shields.io/npm/l/@angular/cli.svg)][license-url]\n[![npm](https://img.shields.io/npm/dm/@angular/cli.svg)][npm-badge-url]\n\n[![Join the chat at https://gitter.im/angular/angular-cli](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/angular/angular-cli?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\n[![GitHub forks](https://img.shields.io/github/forks/angular/angular-cli.svg?style=social&label=Fork)](https://github.com/angular/angular-cli/fork)\n[![GitHub stars](https://img.shields.io/github/stars/angular/angular-cli.svg?style=social&label=Star)](https://github.com/angular/angular-cli)\n\n\n## Note\n\nIf you are updating from a beta or RC version, check out our [1.0 Update Guide](https://github.com/angular/angular-cli/wiki/stories-1.0-update).\n\nIf you wish to collaborate, check out [our issue list](https://github.com/angular/angular-cli/issues).\n\nBefore submitting new issues, have a look at [issues marked with the `type: faq` label](https://github.com/angular/angular-cli/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3A%22type%3A%20faq%22%20).\n\n## Prerequisites\n\nBoth the CLI and generated project have dependencies that require Node 8.9 or higher, together\nwith NPM 5.5.1 or higher.\n\n## Table of Contents\n\n* [Installation](#installation)\n* [Usage](#usage)\n* [Generating a New Project](#generating-and-serving-an-angular-project-via-a-development-server)\n* [Generating Components, Directives, Pipes and Services](#generating-components-directives-pipes-and-services)\n* [Updating Angular CLI](#updating-angular-cli)\n* [Development Hints for working on Angular CLI](#development-hints-for-working-on-angular-cli)\n* [Documentation](#documentation)\n* [License](#license)\n\n## Installation\n\n**BEFORE YOU INSTALL:** please read the [prerequisites](#prerequisites)\n\n### Install Globally\n```bash\nnpm install -g @angular/cli\n```\n\n### Install Locally\n```bash\nnpm install @angular/cli\n```\n\nTo run a locally installed version of the angular-cli, you can call `ng` commands directly by adding the `.bin` folder within your local `node_modules` folder to your PATH. The `node_modules` and `.bin` folders are created in the directory where `npm install @angular/cli` was run upon completion of the install command.\n\nAlternatively, you can install [npx](https://www.npmjs.com/package/npx) and run `npx ng <command>` within the local directory where `npm install @angular/cli` was run, which will use the locally installed angular-cli.\n\n### Install Specific Version (Example: 6.1.1)\n```bash\nnpm install -g @angular/cli@6.1.1\n```\n\n## Usage\n\n```bash\nng help\n```\n\n### Generating and serving an Angular project via a development server\n\n```bash\nng new PROJECT-NAME\ncd PROJECT-NAME\nng serve\n```\nNavigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.\n\nYou can configure the default HTTP host and port used by the development server with two command-line options :\n\n```bash\nng serve --host 0.0.0.0 --port 4201\n```\n\n### Generating Components, Directives, Pipes and Services\n\nYou can use the `ng generate` (or just `ng g`) command to generate Angular components:\n\n```bash\nng generate component my-new-component\nng g component my-new-component # using the alias\n\n# components support relative path generation\n# if in the directory src/app/feature/ and you run\nng g component new-cmp\n# your component will be generated in src/app/feature/new-cmp\n# but if you were to run\nng g component ./newer-cmp\n# your component will be generated in src/app/newer-cmp\n# if in the directory src/app you can also run\nng g component feature/new-cmp\n# and your component will be generated in src/app/feature/new-cmp\n```\nYou can find all possible blueprints in the table below:\n\nScaffold  | Usage\n---       | ---\n[Component](https://angular.io/cli/generate#component)      | `ng g component my-new-component`\n[Directive](https://angular.io/cli/generate#directive)      | `ng g directive my-new-directive`\n[Pipe](https://angular.io/cli/generate#pipe)                | `ng g pipe my-new-pipe`\n[Service](https://angular.io/cli/generate#service)          | `ng g service my-new-service`\n[Class](https://angular.io/cli/generate#class)              | `ng g class my-new-class`\n[Guard](https://angular.io/cli/generate#guard)              | `ng g guard my-new-guard`\n[Interface](https://angular.io/cli/generate#interface)      | `ng g interface my-new-interface`\n[Enum](https://angular.io/cli/generate#enum)                | `ng g enum my-new-enum`\n[Module](https://angular.io/cli/generate#module)            | `ng g module my-module`\n\n\n\n\nangular-cli will add reference to `components`, `directives` and `pipes` automatically in the `app.module.ts`. If you need to add this references to another custom module, follow these steps:\n\n 1. `ng g module new-module` to create a new module\n 2.  call `ng g component new-module/new-component`\n\nThis should add the new `component`, `directive` or `pipe` reference to the `new-module` you've created.\n\n### Updating Angular CLI\n\nIf you're using Angular CLI `1.0.0-beta.28` or less, you need to uninstall `angular-cli` package. It should be done due to changing of package's name and scope from `angular-cli` to `@angular/cli`:\n```bash\nnpm uninstall -g angular-cli\nnpm uninstall --save-dev angular-cli\n```\n\nTo update Angular CLI to a new version, you must update both the global package and your project's local package.\n\nGlobal package:\n```bash\nnpm uninstall -g @angular/cli\nnpm cache verify\n# if npm version is < 5 then use `npm cache clean`\nnpm install -g @angular/cli@latest\n```\n\nLocal project package:\n```bash\nrm -rf node_modules dist # use rmdir /S/Q node_modules dist in Windows Command Prompt; use rm -r -fo node_modules,dist in Windows PowerShell\nnpm install --save-dev @angular/cli@latest\nnpm install\n```\n\nIf you are updating to 1.0 from a beta or RC version, check out our [1.0 Update Guide](https://github.com/angular/angular-cli/wiki/stories-1.0-update).\n\nYou can find more details about changes between versions in [the Releases tab on GitHub](https://github.com/angular/angular-cli/releases).\n\n\n## Development Hints for working on Angular CLI\n\n### Working with master\n\n```bash\ngit clone https://github.com/angular/angular-cli.git\nyarn\nnpm run build\ncd dist/@angular/cli\nnpm link\n```\n\n`npm link` is very similar to `npm install -g` except that instead of downloading the package\nfrom the repo, the just built `dist/@angular/cli/` folder becomes the global package.\nAdditionally, this repository publishes several packages and we use special logic to load all of them\non development setups.\n\nAny changes to the files in the `angular-cli/` folder will immediately affect the global `@angular/cli` package,\nmeaning that, in order to quickly test any changes you make to the cli project, you should simply just run `npm run build`\nagain.\n\nNow you can use `@angular/cli` via the command line:\n\n```bash\nng new foo\ncd foo\nnpm link @angular/cli\nng serve\n```\n\n`npm link @angular/cli` is needed because by default the globally installed `@angular/cli` just loads\nthe local `@angular/cli` from the project which was fetched remotely from npm.\n`npm link @angular/cli` symlinks the global `@angular/cli` package to the local `@angular/cli` package.\nNow the `angular-cli` you cloned before is in three places:\nThe folder you cloned it into, npm's folder where it stores global packages and the Angular CLI project you just created.\n\nYou can also use `ng new foo --link-cli` to automatically link the `@angular/cli` package.\n\nPlease read the official [npm-link documentation](https://docs.npmjs.com/cli/link)\nand the [npm-link cheatsheet](http://browsenpm.org/help#linkinganynpmpackagelocally) for more information.\n\nTo run the Angular CLI E2E test suite, use the `node ./tests/legacy-cli/run_e2e` command.\nIt can also receive a filename to only run that test (e.g. `node ./tests/legacy-cli/run_e2e tests/legacy-cli/e2e/tests/build/dev-build.ts`).\n\nAs part of the test procedure, all packages will be built and linked.\nYou will need to re-run `npm link` to re-link the development Angular CLI environment after tests finish.\n\n### Debugging with VS Code\n\nIn order to debug some Angular CLI behaviour using Visual Studio Code, you can run `npm run build`, and then use a launch configuration like the following:\n\n```json\n{\n    \"type\": \"node\",\n    \"request\": \"launch\",\n    \"name\": \"ng serve\",\n    \"cwd\": \"<path to an Angular project generated with Angular-CLI>\",\n    \"program\": \"${workspaceFolder}/dist/@angular/cli/bin/ng\",\n    \"args\": [\n        \"<ng command>\",\n        ...other arguments\n    ],\n    \"console\": \"integratedTerminal\"\n}\n```\n\nThen you can add breakpoints in `dist/@angular` files.\n\nFor more informations about Node.js debugging in VS Code, see the related [VS Code Documentation](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).\n\n### CPU Profiling\n\nIn order to investigate performance issues, CPU profiling is often useful.\n\nTo capture a CPU profiling, you can:\n1. install the v8-profiler-node8 dependency: `npm install v8-profiler-node8 --no-save`\n1. set the NG_CLI_PROFILING Environment variable to the file name you want:\n    * on Unix systems (Linux & Mac OS X): ̀`export NG_CLI_PROFILING=my-profile`\n    * on Windows: ̀̀`setx NG_CLI_PROFILING my-profile`\n\nThen, just run the ng command on which you want to capture a CPU profile.\nYou will then obtain a `my-profile.cpuprofile` file in the folder from which you ran the ng command.\n\nYou can use the Chrome Devtools to process it. To do so:\n1. open `chrome://inspect/#devices` in Chrome\n1. click on \"Open dedicated DevTools for Node\"\n1. go to the \"profiler\" tab\n1. click on the \"Load\" button and select the generated .cpuprofile file\n1. on the left panel, select the associated file\n\nIn addition to this one, another, more elaborated way to capture a CPU profile using the Chrome Devtools is detailed in https://github.com/angular/angular-cli/issues/8259#issue-269908550.\n\n## Documentation\n\nThe documentation for the Angular CLI is located in this repo's [wiki](https://angular.io/cli).\n\n## License\n\n[MIT](https://github.com/angular/angular-cli/blob/master/LICENSE)\n\n\n[travis-badge]: https://travis-ci.org/angular/angular-cli.svg?branch=master\n[travis-badge-url]: https://travis-ci.org/angular/angular-cli\n[david-badge]: https://david-dm.org/angular/angular-cli.svg\n[david-badge-url]: https://david-dm.org/angular/angular-cli\n[david-dev-badge]: https://david-dm.org/angular/angular-cli/dev-status.svg\n[david-dev-badge-url]: https://david-dm.org/angular/angular-cli?type=dev\n[npm-badge]: https://img.shields.io/npm/v/@angular/cli.svg\n[npm-badge-url]: https://www.npmjs.com/package/@angular/cli\n[license-url]: https://github.com/angular/angular-cli/blob/master/LICENSE\n\n",
+      "readmeFilename": "README.md",
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_dependencies": {
+        "@angular-devkit/architect": "0.900.7",
+        "@angular-devkit/core": "9.0.7",
+        "@angular-devkit/schematics": "9.0.7",
+        "@schematics/angular": "9.0.7",
+        "@schematics/update": "0.900.7",
+        "@yarnpkg/lockfile": "1.1.0",
+        "ansi-colors": "4.1.1",
+        "debug": "^4.1.1",
+        "ini": "1.3.5",
+        "inquirer": "7.0.0",
+        "npm-package-arg": "6.1.1",
+        "npm-pick-manifest": "3.0.2",
+        "open": "7.0.0",
+        "pacote": "9.5.8",
+        "read-package-tree": "5.3.1",
+        "rimraf": "3.0.0",
+        "semver": "6.3.0",
+        "symbol-observable": "1.2.0",
+        "universal-analytics": "^0.4.20",
+        "uuid": "^3.3.2"
+      },
+      "path": "C:\\Program Files\\nodejs\\node_modules\\@angular\\cli",
+      "error": "[Circular]",
+      "extraneous": false
+    },
+    "create-next-app": {
+      "_from": "create-next-app",
+      "_id": "create-next-app@9.3.1",
+      "_inBundle": false,
+      "_integrity": "sha512-xBR+53fyWmNHAHfjB0hUw17EJs1H9XusODGJJIYr3KzYTRAlyZgz81kg42Xcz9yTrijANGe4sAfj3XpSRcPm5A==",
+      "_location": "/create-next-app",
+      "_phantomChildren": {},
+      "_requested": {
+        "type": "tag",
+        "registry": true,
+        "raw": "create-next-app",
+        "name": "create-next-app",
+        "escapedName": "create-next-app",
+        "rawSpec": "",
+        "saveSpec": "[Circular]",
+        "fetchSpec": "latest"
+      },
+      "_requiredBy": [
+        "#USER"
+      ],
+      "_resolved": "https://registry.npmjs.org/create-next-app/-/create-next-app-9.3.1.tgz",
+      "_shasum": "f3a29761ca1aea53077eb5aad86a5abacf9dea12",
+      "_spec": "create-next-app",
+      "_where": "D:\\projects\\practice\\10p\\handontable",
+      "author": {
+        "name": "Next.js Team",
+        "email": "support@zeit.co"
+      },
+      "bin": {
+        "create-next-app": "dist/index.js"
+      },
+      "bugs": {
+        "url": "https://github.com/zeit/next.js/issues"
+      },
+      "deprecated": false,
+      "description": "Create Next.js-powered React apps with one command",
+      "devDependencies": {
+        "@types/got": "9.6.2",
+        "@types/node": "^12.6.8",
+        "@types/prompts": "2.0.1",
+        "@types/tar": "4.0.3",
+        "@zeit/ncc": "^0.20.4",
+        "chalk": "2.4.2",
+        "commander": "2.20.0",
+        "cpy": "7.3.0",
+        "cross-spawn": "6.0.5",
+        "got": "9.6.0",
+        "make-dir": "3.0.0",
+        "promisepipe": "3.0.0",
+        "prompts": "2.1.0",
+        "rimraf": "3.0.0",
+        "tar": "4.4.10",
+        "typescript": "3.7.3",
+        "update-check": "1.5.3",
+        "validate-npm-package-name": "3.0.0"
+      },
+      "files": [
+        "dist"
+      ],
+      "gitHead": "9730be67340d16e2e0c4a936c483326c48be7b1a",
+      "homepage": "https://github.com/zeit/next.js#readme",
+      "keywords": [
+        "react",
+        "next",
+        "next.js"
+      ],
+      "license": "MIT",
+      "name": "create-next-app",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/next.js.git",
+        "directory": "packages/create-next-app"
+      },
+      "scripts": {
+        "build": "ncc build ./index.ts -w -o dist/",
+        "prepublish": "yarn release",
+        "prerelease": "rimraf ./dist/",
+        "release": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register"
+      },
+      "version": "9.3.1",
+      "readme": "# create-next-app\n\nThis package includes the global command for creating [Next.js](https://github.com/zeit/next.js) applications.\n\nPlease refer to its documentation:\n\n- [Setup](https://nextjs.org/docs#setup) – How to create a new Next.js application.\n- [Documentation](https://nextjs.org/docs) – How to develop Next.js applications.\n",
+      "readmeFilename": "README.md",
+      "optionalDependencies": {},
+      "_dependencies": {},
+      "path": "C:\\Program Files\\nodejs\\node_modules\\create-next-app",
+      "error": "[Circular]",
+      "extraneous": false
+    },
+    "istanbul": {
+      "_from": "istanbul",
+      "_id": "istanbul@0.4.5",
+      "_inBundle": false,
+      "_integrity": "sha1-ZcfXPUxNqE1POsMQuRj7C4Azczs=",
+      "_location": "/istanbul",
+      "_phantomChildren": {},
+      "_requested": {
+        "type": "tag",
+        "registry": true,
+        "raw": "istanbul",
+        "name": "istanbul",
+        "escapedName": "istanbul",
+        "rawSpec": "",
+        "saveSpec": "[Circular]",
+        "fetchSpec": "latest"
+      },
+      "_requiredBy": [
+        "#USER"
+      ],
+      "_resolved": "https://registry.npmjs.org/istanbul/-/istanbul-0.4.5.tgz",
+      "_shasum": "65c7d73d4c4da84d4f3ac310b918fb0b8033733b",
+      "_spec": "istanbul",
+      "_where": "D:\\projects\\practice\\10p\\nodejs\\node-training\\TestMocha",
+      "author": {
+        "name": "Krishnan Anantheswaran",
+        "email": "kananthmail-github@yahoo.com"
+      },
+      "bin": {
+        "istanbul": "lib/cli.js"
+      },
+      "bugs": {
+        "url": "https://github.com/gotwarlost/istanbul/issues"
+      },
+      "contributors": [
+        {
+          "name": "Reid Burke",
+          "email": "me@reidburke.com"
+        },
+        {
+          "name": "Martin Cooper",
+          "email": "mfncooper@gmail.com"
+        },
+        {
+          "name": "Dav Glass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "nowamasa",
+          "email": "nowamasa@gmail.com"
+        },
+        {
+          "name": "Miller Medeiros @millermedeiros",
+          "email": "contact@millermedeiros.com"
+        },
+        {
+          "name": "Daniel Perez Alvarez @unindented",
+          "email": "unindented@gmail.com"
+        },
+        {
+          "name": "Mathias Bynens @mathiasbynens",
+          "email": "mathias@qiwi.be"
+        },
+        {
+          "name": "Nathan Brown @nbrownus",
+          "email": "nate@betable.com"
+        },
+        {
+          "name": "Brian Ng @existentialism",
+          "email": "bng412@gmail.com"
+        },
+        {
+          "name": "John Morrison @jrgm"
+        },
+        {
+          "name": "Tomaz Muraus @kami",
+          "email": "tomaz+github@tomaz.me"
+        },
+        {
+          "name": "Joe @jhansche",
+          "email": "jhansche@meetme.com"
+        },
+        {
+          "name": "Vojta Jina @vojtajina",
+          "email": "vojta.jina@gmail.com"
+        },
+        {
+          "name": "Dmitry Shirokov @runk",
+          "email": "deadrunk@gmail.com"
+        },
+        {
+          "name": "Chris Gladd @chrisgladd"
+        },
+        {
+          "name": "Sergey Belov",
+          "email": "peimei@ya.ru"
+        },
+        {
+          "name": "porneL @pornel",
+          "email": "pornel@pornel.net"
+        },
+        {
+          "name": "@asifrc"
+        },
+        {
+          "name": "Gergely Nemeth @gergelyke"
+        },
+        {
+          "name": "@bixdeng"
+        },
+        {
+          "name": "@mpderbec"
+        },
+        {
+          "name": "@jxiaodev"
+        },
+        {
+          "name": "Arpad Borsos @Swatinem",
+          "email": "arpad.borsos@googlemail.com"
+        },
+        {
+          "name": "Ariya Hidayat @ariya"
+        },
+        {
+          "name": "@markyen"
+        },
+        {
+          "name": "Sam Saccone @samccone",
+          "email": "sam@samx.it"
+        },
+        {
+          "name": "Jason Cheatham @jason0x43"
+        },
+        {
+          "name": "@smikes"
+        },
+        {
+          "name": "Yasyf Mohamedali @yasyf",
+          "email": "yasyfm@gmail.com"
+        },
+        {
+          "name": "Fabio Crisci @piuccio",
+          "email": "piuccio@gmail.com"
+        },
+        {
+          "name": "Ryan Roemer @ryan-roemer",
+          "email": "ryan@loose-bits.com"
+        },
+        {
+          "name": "Douglas Christopher Wilson @dougwilson"
+        },
+        {
+          "name": "Gustav Nikolaj @gustavnikolaj",
+          "email": "gustavnikolaj@gmail.com"
+        },
+        {
+          "name": "Denis Sokolov @denis-sokolov",
+          "email": "denis@sokolov.cc"
+        },
+        {
+          "name": "Yann Mainier @ymainier"
+        },
+        {
+          "name": "Yiyu He @dead-horse",
+          "email": "heyiyu.deadhorse@gmail.com"
+        },
+        {
+          "name": "Andrew Kelley @andrewrk",
+          "email": "superjoe30@gmail.com"
+        },
+        {
+          "name": "Will LaBranche @wlabranche",
+          "email": "will@labranche.io"
+        },
+        {
+          "name": "Mathieu Naouache @math-nao",
+          "email": "math.nao@outlook.com"
+        },
+        {
+          "name": "Ron Korving @ronkorving"
+        },
+        {
+          "name": "Rob McGuire-Dale @robatron",
+          "email": "rob.mcguiredale@gmail.com"
+        },
+        {
+          "name": "Justin Johnson @booleangate"
+        },
+        {
+          "name": "Juan Gabriel Jiménez @juangabreil",
+          "email": "juangabreil@gmail.com"
+        },
+        {
+          "name": "Daniel Sabelnikov @dragn",
+          "email": "dsabelnikov@gmail.com"
+        },
+        {
+          "name": "Tony Lukasavage @tonylukasavage",
+          "email": "anthony.lukasavage@gmail.com"
+        },
+        {
+          "name": "Simon Ramsay @nexus-uw"
+        },
+        {
+          "name": "Dominykas Blyžė @dominykas"
+        },
+        {
+          "name": "Seth Pollack @sethpollack"
+        },
+        {
+          "name": "Benjamin E. Coe @bcoe",
+          "email": "ben@npmjs.com"
+        },
+        {
+          "name": "Yuren Ju",
+          "email": "yurenju@gmail.com"
+        },
+        {
+          "name": "Aleksey Verkholantsev",
+          "email": "alex-vee@yandex-team.ru"
+        },
+        {
+          "name": "Ed S",
+          "email": "ejsanders@gmail.com"
+        },
+        {
+          "name": "Mordy Tikotzky",
+          "email": "mordytk@gmail.com"
+        },
+        {
+          "name": "Haoliang Gao @popomore",
+          "email": "sakura9515@gmail.com"
+        },
+        {
+          "name": "Roderick Hsiao @roderickhsiao"
+        },
+        {
+          "name": "Nikita Gusakov @nkt"
+        },
+        {
+          "name": "Alex Dunphy @alexdunphy",
+          "email": "alexanderdunphy@gmail.com"
+        },
+        {
+          "name": "Artemy Tregubenko @arty-name",
+          "email": "me@arty.name"
+        },
+        {
+          "name": "Arye Lukashevski @aryelu"
+        },
+        {
+          "name": "@sterlinghw"
+        },
+        {
+          "name": "Gord Tanner",
+          "email": "gord@bithound.io"
+        },
+        {
+          "name": "Tom MacWright @tmcw",
+          "email": "tom@macwright.org"
+        },
+        {
+          "name": "Kitson Kelly @kitsonk"
+        },
+        {
+          "name": "@asa-git"
+        },
+        {
+          "name": "@RoCat"
+        },
+        {
+          "name": "Ian Page Hands @iphands",
+          "email": "iphands@gmail.com"
+        },
+        {
+          "name": "Eddie Gurnee @pegurnee"
+        },
+        {
+          "name": "Kevin Decker @kpdecker",
+          "email": "kpdecker@gmail.com"
+        },
+        {
+          "name": "isaacs @isaacs",
+          "email": "i@izs.me"
+        },
+        {
+          "name": "Steve Gray @steve-gray"
+        },
+        {
+          "name": "Prayag Verma @pra85",
+          "email": "prayag.verma@gmail.com"
+        },
+        {
+          "name": "Abe Fehr @abejfehr",
+          "email": "abe.fehr@gmail.com"
+        },
+        {
+          "name": "Brian Woodward @doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "@Victorystick"
+        },
+        {
+          "name": "@inversion"
+        },
+        {
+          "name": "@JamesMGreene"
+        },
+        {
+          "name": "@ChALkeR"
+        },
+        {
+          "name": "@graingert"
+        }
+      ],
+      "deprecated": "This module is no longer maintained, try this instead:\n  npm i nyc\nVisit https://istanbul.js.org/integrations for other alternatives.",
+      "description": "Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests. Supports all JS coverage use cases including unit tests, server side functional tests and browser tests. Built for scale",
+      "devDependencies": {
+        "coveralls": "2.x",
+        "jshint": "^2.8.0",
+        "nodeunit": "0.9.x",
+        "requirejs": "2.x",
+        "rimraf": "^2.4.3"
+      },
+      "files": [
+        "index.js",
+        "lib/"
+      ],
+      "homepage": "https://github.com/gotwarlost/istanbul#readme",
+      "keywords": [
+        "coverage",
+        "code coverage",
+        "JS code coverage",
+        "JS coverage"
+      ],
+      "license": "BSD-3-Clause",
+      "name": "istanbul",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/gotwarlost/istanbul.git"
+      },
+      "scripts": {
+        "docs": "npm install yuidocjs && node node_modules/yuidocjs/lib/cli.js .",
+        "posttest": "node ./lib/cli.js check-coverage --statements 95 --branches 80",
+        "pretest": "jshint index.js lib/ test/ && ./download-escodegen-browser.sh",
+        "test": "node --harmony test/run.js"
+      },
+      "version": "0.4.5",
+      "readme": "## Istanbul - a JS code coverage tool written in JS\n\n[![Build Status](https://secure.travis-ci.org/gotwarlost/istanbul.svg?branch=master)](http://travis-ci.org/gotwarlost/istanbul)\n[![Dependency Status](https://gemnasium.com/gotwarlost/istanbul.svg)](https://gemnasium.com/gotwarlost/istanbul)\n[![Coverage Status](https://img.shields.io/coveralls/gotwarlost/istanbul.svg)](https://coveralls.io/r/gotwarlost/istanbul?branch=master)\n[![bitHound Score](https://www.bithound.io/github/gotwarlost/istanbul/badges/score.svg)](https://www.bithound.io/github/gotwarlost/istanbul)\n\n[![NPM](https://nodei.co/npm/istanbul.png?downloads=true)](https://nodei.co/npm/istanbul/)\n\n**New** `v0.4.0` now has beautiful HTML reports. Props to Tom MacWright @tmcw for a fantastic job!\n\n* [Features and use cases](#features)\n* [Getting started and configuration](#getting-started)\n* [Usage on Windows](#usage-on-windows)\n* [The command line](#the-command-line)\n* [Ignoring code for coverage](#ignoring-code-for-coverage)\n* [API](#api)\n* [Changelog](https://github.com/gotwarlost/istanbul/blob/master/CHANGELOG.md)\n* [License and credits](#license)\n\n### Features\n\n* All-javascript instrumentation library that tracks **statement, branch,\nand function coverage**.\n* **Module loader hooks** to instrument code on the fly\n* **Command line tools** to run node unit tests \"with coverage turned on\" and no cooperation\nwhatsoever from the test runner\n* Multiple report formats: **HTML**, **LCOV**, **Cobertura** and more.\n* Ability to use as [middleware](https://github.com/gotwarlost/istanbul-middleware) when serving JS files that need to be tested on the browser.\n* Can be used on the **command line** as well as a **library**\n* Based on the awesome `esprima` parser and the equally awesome `escodegen` code generator\n* Well-tested on node (prev, current and next versions) and the browser (instrumentation library only)\n\n### Use cases\n\nSupports the following use cases and more\n\n* transparent coverage of nodejs unit tests\n* instrumentation/ reporting of files in batch mode for browser tests\n* Server side code coverage for nodejs by embedding it as [custom middleware](https://github.com/gotwarlost/istanbul-middleware)\n\n### Getting started\n\n    $ npm install -g istanbul\n\nThe best way to see it in action is to run node unit tests. Say you have a test\nscript `test.js` that runs all tests for your node project without coverage.\n\nSimply:\n\n    $ cd /path/to/your/source/root\n    $ istanbul cover test.js\n\nand this should produce a `coverage.json`, `lcov.info` and `lcov-report/*html` under `./coverage`\n\nSample of code coverage reports produced by this tool (for this tool!):\n\n[HTML reports](http://gotwarlost.github.com/istanbul/public/coverage/lcov-report/index.html)\n\n### Usage on Windows\n\nIstanbul assumes that the `command` passed to it is a JS file (e.g. Jasmine, vows etc.),\nthis is however not true on Windows where npm wrap bin files in a `.cmd` file.\nSince Istanbul can not parse `.cmd` files you need to reference the bin file manually.\n\nHere is an example using Jasmine 2:\n\n    istanbul cover node_modules\\jasmine\\bin\\jasmine.js\n\nIn order to use this cross platform (e.i. Linux, Mac and Windows), you can insert\nthe above line into the script object in your package.json file but with normal\nslash.\n\n    \"scripts\": {\n        \"test\": \"istanbul cover node_modules/jasmine/bin/jasmine.js\"\n    }\n\n### Configuring\n\nDrop a `.istanbul.yml` file at the top of the source tree to configure istanbul.\n`istanbul help config` tells you more about the config file format.\n\n### The command line\n\n    $ istanbul help\n\ngives you detailed help on all commands.\n\n```\nUsage: istanbul help config | <command>\n\n`config` provides help with istanbul configuration\n\nAvailable commands are:\n\n      check-coverage\n              checks overall/per-file coverage against thresholds from coverage\n              JSON files. Exits 1 if thresholds are not met, 0 otherwise\n\n\n      cover   transparently adds coverage information to a node command. Saves\n              coverage.json and reports at the end of execution\n\n\n      help    shows help\n\n\n      instrument\n              instruments a file or a directory tree and writes the\n              instrumented code to the desired output location\n\n\n      report  writes reports for coverage JSON objects produced in a previous\n              run\n\n\n      test    cover a node command only when npm_config_coverage is set. Use in\n              an `npm test` script for conditional coverage\n\n\nCommand names can be abbreviated as long as the abbreviation is unambiguous\n```\n\nTo get detailed help for a command and what command-line options it supports, run:\n\n    istanbul help <command>\n\n(Most of the command line options are not covered in this document.)\n\n#### The `cover` command\n\n    $ istanbul cover my-test-script.js -- my test args\n    # note the -- between the command name and the arguments to be passed\n\nThe `cover` command can be used to get a coverage object and reports for any arbitrary\nnode script. By default, coverage information is written under `./coverage` - this\ncan be changed using command-line options.\n\nThe `cover` command can also be passed an optional `--handle-sigint` flag to\nenable writing reports when a user triggers a manual SIGINT of the process that is\nbeing covered. This can be useful when you are generating coverage for a long lived process.\n\n#### The `test` command\n\nThe `test` command has almost the same behavior as the `cover` command, except that\nit skips coverage unless the `npm_config_coverage` environment variable is set.\n\n**This command is deprecated** since the latest versions of npm do not seem to\nset the `npm_config_coverage` variable.\n\n#### The `instrument` command\n\nInstruments a single JS file or an entire directory tree and produces an output\ndirectory tree with instrumented code. This should not be required for running node\nunit tests but is useful for tests to be run on the browser.\n\n#### The `report` command\n\nWrites reports using `coverage*.json` files as the source of coverage information.\nReports are available in multiple formats and can be individually configured\nusing the istanbul config file. See `istanbul help report` for more details.\n\n#### The `check-coverage` command\n\nChecks the coverage of statements, functions, branches, and lines against the\nprovided thresholds. Positive thresholds are taken to be the minimum percentage\nrequired and negative numbers are taken to be the number of uncovered entities\nallowed.\n\n### Ignoring code for coverage\n\n* Skip an `if` or `else` path with `/* istanbul ignore if */` or `/* istanbul ignore else */` respectively.\n* For all other cases, skip the next 'thing' in the source with: `/* istanbul ignore next */`\n\nSee [ignoring-code-for-coverage.md](ignoring-code-for-coverage.md) for the spec.\n\n\n### API\n\nAll the features of istanbul can be accessed as a library.\n\n#### Instrument code\n\n```javascript\n    var istanbul = require('istanbul');\n    var instrumenter = new istanbul.Instrumenter();\n\n    var generatedCode = instrumenter.instrumentSync('function meaningOfLife() { return 42; }',\n        'filename.js');\n```\n\n#### Generate reports given a bunch of coverage JSON objects\n\n```javascript\n    var istanbul = require('istanbul'),\n        collector = new istanbul.Collector(),\n        reporter = new istanbul.Reporter(),\n        sync = false;\n\n    collector.add(obj1);\n    collector.add(obj2); //etc.\n\n    reporter.add('text');\n    reporter.addAll([ 'lcov', 'clover' ]);\n    reporter.write(collector, sync, function () {\n        console.log('All reports generated');\n    });\n```\n\nFor the gory details consult the [public API](http://gotwarlost.github.com/istanbul/public/apidocs/index.html)\n\n\n### Multiple Process Usage\n\nIstanbul can be used in a multiple process environment by running each process\nwith Istanbul, writing a unique coverage file for each process, and combining\nthe results when generating reports. The method used to perform this will\ndepend on the process forking API used. For example when using the\n[cluster module](http://nodejs.org/api/cluster.html) you must setup the master\nto start child processes with Istanbul coverage, disable reporting, and output\ncoverage files that include the PID in the filename.  Before each run you may\nneed to clear out the coverage data directory.\n\n```javascript\n    if(cluster.isMaster) {\n        // setup cluster if running with istanbul coverage\n        if(process.env.running_under_istanbul) {\n            // use coverage for forked process\n            // disabled reporting and output for child process\n            // enable pid in child process coverage filename\n            cluster.setupMaster({\n                exec: './node_modules/.bin/istanbul',\n                args: [\n                    'cover', '--report', 'none', '--print', 'none', '--include-pid',\n                    process.argv[1], '--'].concat(process.argv.slice(2))\n            });\n        }\n        // ...\n        // ... cluster.fork();\n        // ...\n    } else {\n        // ... worker code\n    }\n```\n\n### Coverage.json\n\nFor details on the format of the coverage.json object, [see here](./coverage.json.md).\n\n### License\n\nistanbul is licensed under the [BSD License](http://github.com/gotwarlost/istanbul/raw/master/LICENSE).\n\n### Third-party libraries\n\nThe following third-party libraries are used by this module:\n\n* abbrev: https://github.com/isaacs/abbrev-js -  to handle command abbreviations\n* async: https://github.com/caolan/async - for parallel instrumentation of files\n* escodegen: https://github.com/Constellation/escodegen - for JS code generation\n* esprima: https://github.com/ariya/esprima - for JS parsing\n* glob: https://github.com/isaacs/node-glob - for loading and matching path expressions\n* handlebars: https://github.com/wycats/handlebars.js/ - for report template expansion\n* js-yaml: https://github.com/nodeca/js-yaml - for YAML config file load\n* mkdirp: https://github.com/substack/node-mkdirp - to create output directories\n* nodeunit: https://github.com/caolan/nodeunit - dev dependency for unit tests\n* nopt: https://github.com/isaacs/nopt - for option parsing\n* once: https://github.com/isaacs/once - to ensure callbacks are called once\n* resolve: https://github.com/substack/node-resolve - for resolving a post-require hook module name into its main file.\n* rimraf - https://github.com/isaacs/rimraf - dev dependency for unit tests\n* which: https://github.com/isaacs/node-which - to resolve a node command to a file for the `cover` command\n* wordwrap: https://github.com/substack/node-wordwrap - for prettier help\n* prettify: http://code.google.com/p/google-code-prettify/ - for syntax colored HTML reports. Files checked in under `lib/vendor/`\n\n### Inspired by\n\n* YUI test coverage - https://github.com/yui/yuitest - the grand-daddy of JS coverage tools. Istanbul has been specifically designed to offer an alternative to this library with an easy migration path.\n* cover: https://github.com/itay/node-cover - the inspiration for the `cover` command, modeled after the `run` command in that tool. The coverage methodology used by istanbul is quite different, however\n\n### Shout out to\n\n   * [mfncooper](https://github.com/mfncooper) - for great brainstorming discussions\n   * [reid](https://github.com/reid), [davglass](https://github.com/davglass), the YUI dudes, for interesting conversations, encouragement, support and gentle pressure to get it done :)\n\n### Why the funky name?\n\nSince all the good ones are taken. Comes from the loose association of ideas across\ncoverage, carpet-area coverage, the country that makes good carpets and so on...\n",
+      "readmeFilename": "README.md",
+      "optionalDependencies": {},
+      "_dependencies": {
+        "abbrev": "1.0.x",
+        "async": "1.x",
+        "escodegen": "1.8.x",
+        "esprima": "2.7.x",
+        "glob": "^5.0.15",
+        "handlebars": "^4.0.1",
+        "js-yaml": "3.x",
+        "mkdirp": "0.5.x",
+        "nopt": "3.x",
+        "once": "1.x",
+        "resolve": "1.1.x",
+        "supports-color": "^3.1.0",
+        "which": "^1.1.1",
+        "wordwrap": "^1.0.0"
+      },
+      "path": "C:\\Program Files\\nodejs\\node_modules\\istanbul",
+      "error": "[Circular]",
+      "extraneous": false
+    },
+    "mocha": {
+      "_from": "mocha",
+      "_id": "mocha@7.1.1",
+      "_inBundle": false,
+      "_integrity": "sha512-3qQsu3ijNS3GkWcccT5Zw0hf/rWvu1fTN9sPvEd81hlwsr30GX2GcDSSoBxo24IR8FelmrAydGC6/1J5QQP4WA==",
+      "_location": "/mocha",
+      "_phantomChildren": {},
+      "_requested": {
+        "type": "tag",
+        "registry": true,
+        "raw": "mocha",
+        "name": "mocha",
+        "escapedName": "mocha",
+        "rawSpec": "",
+        "saveSpec": "[Circular]",
+        "fetchSpec": "latest"
+      },
+      "_requiredBy": [
+        "#USER"
+      ],
+      "_resolved": "https://registry.npmjs.org/mocha/-/mocha-7.1.1.tgz",
+      "_shasum": "89fbb30d09429845b1bb893a830bf5771049a441",
+      "_spec": "mocha",
+      "_where": "D:\\projects\\practice\\10p\\nodejs\\node-training\\TestMocha",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca"
+      },
+      "bin": {
+        "mocha": "bin/mocha",
+        "_mocha": "bin/_mocha"
+      },
+      "browser": {
+        "./index.js": "./browser-entry.js",
+        "./lib/growl.js": "./lib/browser/growl.js",
+        "tty": "./lib/browser/tty.js",
+        "./lib/cli/*.js": false,
+        "chokidar": false,
+        "fs": false,
+        "glob": false,
+        "path": false,
+        "supports-color": false
+      },
+      "browserify": {
+        "transform": [
+          "./scripts/package-json-cullify"
+        ]
+      },
+      "bugs": {
+        "url": "https://github.com/mochajs/mocha/issues/"
+      },
+      "deprecated": false,
+      "description": "simple, flexible, fun test framework",
+      "devDependencies": {
+        "@11ty/eleventy": "^0.8.3",
+        "@mocha/docdash": "^2.1.2",
+        "acorn": "^7.0.0",
+        "assetgraph-builder": "^7.0.0",
+        "autoprefixer": "^9.6.0",
+        "babel-eslint": "^10.0.3",
+        "browserify": "^16.2.3",
+        "browserify-package-json": "^1.0.1",
+        "chai": "^4.2.0",
+        "coffee-script": "^1.12.7",
+        "coveralls": "^3.0.3",
+        "cross-env": "^5.2.0",
+        "cross-spawn": "^6.0.5",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.9.0",
+        "eslint-config-semistandard": "^15.0.0",
+        "eslint-config-standard": "^14.1.0",
+        "eslint-plugin-import": "^2.19.1",
+        "eslint-plugin-node": "^11.0.0",
+        "eslint-plugin-prettier": "^3.1.2",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.1",
+        "fs-extra": "^8.0.1",
+        "husky": "^1.3.1",
+        "hyperlink": "^4.3.1",
+        "jsdoc": "^3.6.3",
+        "karma": "^4.1.0",
+        "karma-browserify": "^6.0.0",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-sauce-launcher": "^2.0.2",
+        "lint-staged": "^8.1.7",
+        "markdown-it": "^8.4.2",
+        "markdown-it-anchor": "^5.2.4",
+        "markdown-it-attrs": "^2.4.1",
+        "markdown-it-prism": "^2.0.2",
+        "markdown-magic": "^0.1.25",
+        "markdown-magic-package-json": "^2.0.0",
+        "markdown-toc": "^1.2.0",
+        "markdownlint-cli": "^0.14.1",
+        "nps": "^5.9.12",
+        "nyc": "^14.1.1",
+        "prettier": "^1.17.1",
+        "remark": "^10.0.1",
+        "remark-github": "^7.0.6",
+        "remark-inline-links": "^3.1.2",
+        "rewiremock": "^3.13.7",
+        "rimraf": "^2.6.3",
+        "sinon": "^7.3.2",
+        "strip-ansi": "^5.2.0",
+        "svgo": "^1.2.2",
+        "through2": "^3.0.1",
+        "to-vfile": "^5.0.3",
+        "unexpected": "^10.40.2",
+        "unexpected-eventemitter": "^1.1.3",
+        "unexpected-sinon": "^10.11.2",
+        "uslug": "^1.0.4",
+        "watchify": "^3.11.1"
+      },
+      "directories": {
+        "lib": "./lib",
+        "test": "./test"
+      },
+      "engines": {
+        "node": ">= 8.0.0"
+      },
+      "files": [
+        "bin/*mocha",
+        "assets/growl/*.png",
+        "lib/**/*.{js,html,json}",
+        "index.js",
+        "mocha.css",
+        "mocha.js",
+        "browser-entry.js"
+      ],
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/mochajs"
+      },
+      "gitter": "https://gitter.im/mochajs/mocha",
+      "homepage": "https://mochajs.org/",
+      "husky": {
+        "hooks": {
+          "pre-commit": "lint-staged"
+        }
+      },
+      "keywords": [
+        "mocha",
+        "test",
+        "bdd",
+        "tdd",
+        "tap"
+      ],
+      "license": "MIT",
+      "logo": "https://cldup.com/S9uQ-cOLYz.svg",
+      "name": "mocha",
+      "notifyLogo": "https://ibin.co/4QuRuGjXvl36.png",
+      "prettier": {
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "endOfLine": "auto"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mochajs/mocha.git"
+      },
+      "scripts": {
+        "prepublishOnly": "nps test clean build",
+        "start": "nps",
+        "test": "nps test",
+        "version": "nps version"
+      },
+      "version": "7.1.1",
+      "readme": "<p align=\"center\">\n  <img src=\"https://cldup.com/xFVFxOioAU.svg\" alt=\"Mocha test framework\"/>\n</p>\n\n<p align=\"center\">☕️ Simple, flexible, fun JavaScript test framework for Node.js & The Browser ☕️</p>\n\n<p align=\"center\"><a href=\"http://travis-ci.org/mochajs/mocha\"><img src=\"https://api.travis-ci.org/mochajs/mocha.svg?branch=master\" alt=\"Build Status\"></a>  <a href=\"https://coveralls.io/github/mochajs/mocha\"><img src=\"https://coveralls.io/repos/github/mochajs/mocha/badge.svg\" alt=\"Coverage Status\"></a>  <a href=\"https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmochajs%2Fmocha?ref=badge_shield\"><img src=\"https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmochajs%2Fmocha.svg?type=shield\" alt=\"FOSSA Status\"></a>  <a href=\"https://gitter.im/mochajs/mocha?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge\"><img src=\"https://badges.gitter.im/Join%20Chat.svg\" alt=\"Gitter\"></a>  <a href=\"https://github.com/mochajs/mocha#backers\"><img src=\"https://opencollective.com/mochajs/backers/badge.svg\" alt=\"OpenCollective\"></a>  <a href=\"https://github.com/mochajs/mocha#sponsors\"><img src=\"https://opencollective.com/mochajs/sponsors/badge.svg\" alt=\"OpenCollective\"></a>\n</p>\n\n<p align=\"center\"><br><img alt=\"Mocha Browser Support h/t SauceLabs\" src=\"https://saucelabs.com/browser-matrix/mochajs.svg\" width=\"354\"></p>\n\n## Links\n\n- **[Documentation](https://mochajs.org/)**\n- **[Release Notes / History / Changes](https://github.com/mochajs/mocha/blob/master/CHANGELOG.md)**\n- [Code of Conduct](https://github.com/mochajs/mocha/blob/master/.github/CODE_OF_CONDUCT.md)\n- [Contributing](https://github.com/mochajs/mocha/blob/master/.github/CONTRIBUTING.md)\n- [Gitter Chatroom](https://gitter.im/mochajs/mocha) (ask questions here!)\n- [Google Group](https://groups.google.com/group/mochajs)\n- [Issue Tracker](https://github.com/mochajs/mocha/issues)\n\n## Backers\n\n[Become a backer](https://opencollective.com/mochajs#backer) and show your support to our open source project.\n\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/0/avatar)](https://opencollective.com/mochajs/backer/0/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/1/avatar)](https://opencollective.com/mochajs/backer/1/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/2/avatar)](https://opencollective.com/mochajs/backer/2/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/3/avatar)](https://opencollective.com/mochajs/backer/3/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/4/avatar)](https://opencollective.com/mochajs/backer/4/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/5/avatar)](https://opencollective.com/mochajs/backer/5/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/6/avatar)](https://opencollective.com/mochajs/backer/6/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/7/avatar)](https://opencollective.com/mochajs/backer/7/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/8/avatar)](https://opencollective.com/mochajs/backer/8/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/9/avatar)](https://opencollective.com/mochajs/backer/9/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/10/avatar)](https://opencollective.com/mochajs/backer/10/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/11/avatar)](https://opencollective.com/mochajs/backer/11/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/12/avatar)](https://opencollective.com/mochajs/backer/12/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/13/avatar)](https://opencollective.com/mochajs/backer/13/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/14/avatar)](https://opencollective.com/mochajs/backer/14/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/15/avatar)](https://opencollective.com/mochajs/backer/15/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/16/avatar)](https://opencollective.com/mochajs/backer/16/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/17/avatar)](https://opencollective.com/mochajs/backer/17/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/18/avatar)](https://opencollective.com/mochajs/backer/18/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/19/avatar)](https://opencollective.com/mochajs/backer/19/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/20/avatar)](https://opencollective.com/mochajs/backer/20/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/21/avatar)](https://opencollective.com/mochajs/backer/21/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/22/avatar)](https://opencollective.com/mochajs/backer/22/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/23/avatar)](https://opencollective.com/mochajs/backer/23/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/24/avatar)](https://opencollective.com/mochajs/backer/24/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/25/avatar)](https://opencollective.com/mochajs/backer/25/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/26/avatar)](https://opencollective.com/mochajs/backer/26/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/27/avatar)](https://opencollective.com/mochajs/backer/27/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/28/avatar)](https://opencollective.com/mochajs/backer/28/website)\n[![MochaJS Backer](https://opencollective.com/mochajs/backer/29/avatar)](https://opencollective.com/mochajs/backer/29/website)\n\n## Sponsors\n\nDoes your company use Mocha? Ask your manager or marketing team if your company would be interested in supporting our project. Support will allow the maintainers to dedicate more time for maintenance and new features for everyone. Also, your company's logo will show [on GitHub](https://github.com/mochajs/mocha#readme) and on [our site](https://mochajs.org) - who doesn't want a little extra exposure? [Here's the info](https://opencollective.com/mochajs#sponsor).\n\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/0/avatar)](https://opencollective.com/mochajs/sponsor/0/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/1/avatar)](https://opencollective.com/mochajs/sponsor/1/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/2/avatar)](https://opencollective.com/mochajs/sponsor/2/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/3/avatar)](https://opencollective.com/mochajs/sponsor/3/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/4/avatar)](https://opencollective.com/mochajs/sponsor/4/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/5/avatar)](https://opencollective.com/mochajs/sponsor/5/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/6/avatar)](https://opencollective.com/mochajs/sponsor/6/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/7/avatar)](https://opencollective.com/mochajs/sponsor/7/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/8/avatar)](https://opencollective.com/mochajs/sponsor/8/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/9/avatar)](https://opencollective.com/mochajs/sponsor/9/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/10/avatar)](https://opencollective.com/mochajs/sponsor/10/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/11/avatar)](https://opencollective.com/mochajs/sponsor/11/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/12/avatar)](https://opencollective.com/mochajs/sponsor/12/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/13/avatar)](https://opencollective.com/mochajs/sponsor/13/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/14/avatar)](https://opencollective.com/mochajs/sponsor/14/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/15/avatar)](https://opencollective.com/mochajs/sponsor/15/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/16/avatar)](https://opencollective.com/mochajs/sponsor/16/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/17/avatar)](https://opencollective.com/mochajs/sponsor/17/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/18/avatar)](https://opencollective.com/mochajs/sponsor/18/website)\n[![MochaJS Sponsor](https://opencollective.com/mochajs/sponsor/19/avatar)](https://opencollective.com/mochajs/sponsor/19/website)\n\n## Development\n\nYou might want to know that:\n\n- Mocha is the _most-depended-upon_ module on npm (source: [libraries.io](https://libraries.io/search?order=desc&platforms=NPM&sort=dependents_count)), and\n- Mocha is an _independent_ open-source project, maintained exclusively by volunteers.\n\nYou might want to help:\n\n- New to contributing to Mocha? Check out this list of [good first issues](https://github.com/mochajs/mocha/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue)\n- Mocha could use a hand with [these issues](https://github.com/mochajs/mocha/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)\n- The [maintainer's handbook](https://github.com/mochajs/mocha/blob/master/MAINTAINERS.md) explains how things get done\n\nFinally, come [chat with the maintainers](https://gitter.im/mochajs/contributors) on Gitter if you want to help with:\n\n- Triaging issues, answering questions\n- Review, merging, and closing pull requests\n- Other project-maintenance-y things\n\n## License\n\nCopyright 2011-2020 OpenJS Foundation and contributors. Licensed [MIT](https://github.com/mochajs/mocha/blob/master/LICENSE).\n\n[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmochajs%2Fmocha.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmochajs%2Fmocha?ref=badge_large)\n",
+      "readmeFilename": "README.md",
+      "optionalDependencies": {},
+      "_dependencies": {
+        "ansi-colors": "3.2.3",
+        "browser-stdout": "1.3.1",
+        "chokidar": "3.3.0",
+        "debug": "3.2.6",
+        "diff": "3.5.0",
+        "escape-string-regexp": "1.0.5",
+        "find-up": "3.0.0",
+        "glob": "7.1.3",
+        "growl": "1.10.5",
+        "he": "1.2.0",
+        "js-yaml": "3.13.1",
+        "log-symbols": "3.0.0",
+        "minimatch": "3.0.4",
+        "mkdirp": "0.5.3",
+        "ms": "2.1.1",
+        "node-environment-flags": "1.0.6",
+        "object.assign": "4.1.0",
+        "strip-json-comments": "2.0.1",
+        "supports-color": "6.0.0",
+        "which": "1.3.1",
+        "wide-align": "1.1.3",
+        "yargs": "13.3.2",
+        "yargs-parser": "13.1.2",
+        "yargs-unparser": "1.6.0"
+      },
+      "path": "C:\\Program Files\\nodejs\\node_modules\\mocha",
+      "error": "[Circular]",
+      "extraneous": false
+    },
+    "node-gyp": {
+      "_from": "node-gyp",
+      "_id": "node-gyp@6.1.0",
+      "_inBundle": false,
+      "_integrity": "sha512-h4A2zDlOujeeaaTx06r4Vy+8MZ1679lU+wbCKDS4ZtvY2A37DESo37oejIw0mtmR3+rvNwts5B6Kpt1KrNYdNw==",
+      "_location": "/node-gyp",
+      "_phantomChildren": {},
+      "_requested": {
+        "type": "tag",
+        "registry": true,
+        "raw": "node-gyp",
+        "name": "node-gyp",
+        "escapedName": "node-gyp",
+        "rawSpec": "",
+        "saveSpec": "[Circular]",
+        "fetchSpec": "latest"
+      },
+      "_requiredBy": [
+        "#USER"
+      ],
+      "_resolved": "https://registry.npmjs.org/node-gyp/-/node-gyp-6.1.0.tgz",
+      "_shasum": "64e31c61a4695ad304c1d5b82cf6b7c79cc79f3f",
+      "_spec": "node-gyp",
+      "_where": "D:\\projects\\practice\\10p\\nodejs\\node-training\\advance-node",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "bin": {
+        "node-gyp": "bin/node-gyp.js"
+      },
+      "bugs": {
+        "url": "https://github.com/nodejs/node-gyp/issues"
+      },
+      "deprecated": false,
+      "description": "Node.js native addon build tool",
+      "devDependencies": {
+        "bindings": "^1.5.0",
+        "nan": "^2.14.0",
+        "require-inject": "^1.4.4",
+        "standard": "^14.3.1",
+        "tap": "~12.7.0"
+      },
+      "engines": {
+        "node": ">= 6.0.0"
+      },
+      "homepage": "https://github.com/nodejs/node-gyp#readme",
+      "installVersion": 9,
+      "keywords": [
+        "native",
+        "addon",
+        "module",
+        "c",
+        "c++",
+        "bindings",
+        "gyp"
+      ],
+      "license": "MIT",
+      "main": "./lib/node-gyp.js",
+      "name": "node-gyp",
+      "preferGlobal": true,
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/nodejs/node-gyp.git"
+      },
+      "scripts": {
+        "lint": "standard */*.js test/**/*.js",
+        "test": "npm run lint && tap --timeout=120 test/test-*"
+      },
+      "version": "6.1.0",
+      "readme": "# `node-gyp` - Node.js native addon build tool\n\n[![Travis CI](https://travis-ci.com/nodejs/node-gyp.svg?branch=master)](https://travis-ci.com/nodejs/node-gyp)\n[![Build Status](https://github.com/nodejs/node-gyp/workflows/Python_tests/badge.svg)](https://github.com/nodejs/node-gyp/actions?workflow=Python_tests)\n\n`node-gyp` is a cross-platform command-line tool written in Node.js for\ncompiling native addon modules for Node.js. It contains a fork of the\n[gyp](https://gyp.gsrc.io) project that was previously used by the Chromium\nteam, extended to support the development of Node.js native addons.\n\nNote that `node-gyp` is _not_ used to build Node.js itself.\n\nMultiple target versions of Node.js are supported (i.e. `0.8`, ..., `4`, `5`, `6`,\netc.), regardless of what version of Node.js is actually installed on your system\n(`node-gyp` downloads the necessary development files or headers for the target version).\n\n## Features\n\n * The same build commands work on any of the supported platforms\n * Supports the targeting of different versions of Node.js\n\n## Installation\n\nYou can install `node-gyp` using `npm`:\n\n``` bash\n$ npm install -g node-gyp\n```\n\nDepending on your operating system, you will need to install:\n\n### On Unix\n\n   * Python v2.7, v3.5, v3.6, or v3.7\n   * `make`\n   * A proper C/C++ compiler toolchain, like [GCC](https://gcc.gnu.org)\n\n### On macOS\n\n   * Python v2.7, v3.5, v3.6, or v3.7\n   * [Xcode](https://developer.apple.com/xcode/download/)\n     * You also need to install the `XCode Command Line Tools` by running `xcode-select --install`. Alternatively, if you already have the full Xcode installed, you can find them under the menu `Xcode -> Open Developer Tool -> More Developer Tools...`. This step will install `clang`, `clang++`, and `make`.\n   * If your Mac has been _upgraded_ to macOS Catalina (10.15), please read [macOS_Catalina.md](macOS_Catalina.md).\n\n### On Windows\n\nInstall the current version of Python from the [Microsoft Store package](https://docs.python.org/3/using/windows.html#the-microsoft-store-package).\n\n#### Option 1\n\nInstall all the required tools and configurations using Microsoft's [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools) using `npm install --global --production windows-build-tools` from an elevated PowerShell or CMD.exe (run as Administrator).\n\n#### Option 2\n\nInstall tools and configuration manually:\n   * Install Visual C++ Build Environment: [Visual Studio Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools)\n   (using \"Visual C++ build tools\" workload) or [Visual Studio 2017 Community](https://visualstudio.microsoft.com/pl/thank-you-downloading-visual-studio/?sku=Community)\n   (using the \"Desktop development with C++\" workload)\n   * Launch cmd, `npm config set msvs_version 2017`\n\n   If the above steps didn't work for you, please visit [Microsoft's Node.js Guidelines for Windows](https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#compiling-native-addon-modules) for additional tips.\n\n   To target native ARM64 Node.js on Windows 10 on ARM, add the components \"Visual C++ compilers and libraries for ARM64\" and \"Visual C++ ATL for ARM64\".\n\n### Configuring Python Dependency\n\n`node-gyp` requires that you have installed a compatible version of Python, one of: v2.7, v3.5, v3.6,\nor v3.7. If you have multiple Python versions installed, you can identify which Python\nversion `node-gyp` should use in one of the following ways:\n\n1. by setting the `--python` command-line option, e.g.:\n\n``` bash\n$ node-gyp <command> --python /path/to/executable/python\n```\n\n2. If `node-gyp` is called by way of `npm`, *and* you have multiple versions of\nPython installed, then you can set `npm`'s 'python' config key to the appropriate\nvalue:\n\n``` bash\n$ npm config set python /path/to/executable/python\n```\n\n3. If the `PYTHON` environment variable is set to the path of a Python executable,\nthen that version will be used, if it is a compatible version.\n\n4. If the `NODE_GYP_FORCE_PYTHON` environment variable is set to the path of a\nPython executable, it will be used instead of any of the other configured or\nbuiltin Python search paths. If it's not a compatible version, no further\nsearching will be done.\n\n## How to Use\n\nTo compile your native addon, first go to its root directory:\n\n``` bash\n$ cd my_node_addon\n```\n\nThe next step is to generate the appropriate project build files for the current\nplatform. Use `configure` for that:\n\n``` bash\n$ node-gyp configure\n```\n\nAuto-detection fails for Visual C++ Build Tools 2015, so `--msvs_version=2015`\nneeds to be added (not needed when run by npm as configured above):\n``` bash\n$ node-gyp configure --msvs_version=2015\n```\n\n__Note__: The `configure` step looks for a `binding.gyp` file in the current\ndirectory to process. See below for instructions on creating a `binding.gyp` file.\n\nNow you will have either a `Makefile` (on Unix platforms) or a `vcxproj` file\n(on Windows) in the `build/` directory. Next, invoke the `build` command:\n\n``` bash\n$ node-gyp build\n```\n\nNow you have your compiled `.node` bindings file! The compiled bindings end up\nin `build/Debug/` or `build/Release/`, depending on the build mode. At this point,\nyou can require the `.node` file with Node.js and run your tests!\n\n__Note:__ To create a _Debug_ build of the bindings file, pass the `--debug` (or\n`-d`) switch when running either the `configure`, `build` or `rebuild` commands.\n\n## The `binding.gyp` file\n\nA `binding.gyp` file describes the configuration to build your module, in a\nJSON-like format. This file gets placed in the root of your package, alongside\n`package.json`.\n\nA barebones `gyp` file appropriate for building a Node.js addon could look like:\n\n```python\n{\n  \"targets\": [\n    {\n      \"target_name\": \"binding\",\n      \"sources\": [ \"src/binding.cc\" ]\n    }\n  ]\n}\n```\n\n## Further reading\n\nSome additional resources for Node.js native addons and writing `gyp` configuration files:\n\n * [\"Going Native\" a nodeschool.io tutorial](http://nodeschool.io/#goingnative)\n * [\"Hello World\" node addon example](https://github.com/nodejs/node/tree/master/test/addons/hello-world)\n * [gyp user documentation](https://gyp.gsrc.io/docs/UserDocumentation.md)\n * [gyp input format reference](https://gyp.gsrc.io/docs/InputFormatReference.md)\n * [*\"binding.gyp\" files out in the wild* wiki page](https://github.com/nodejs/node-gyp/wiki/%22binding.gyp%22-files-out-in-the-wild)\n\n## Commands\n\n`node-gyp` responds to the following commands:\n\n| **Command**   | **Description**\n|:--------------|:---------------------------------------------------------------\n| `help`        | Shows the help dialog\n| `build`       | Invokes `make`/`msbuild.exe` and builds the native addon\n| `clean`       | Removes the `build` directory if it exists\n| `configure`   | Generates project build files for the current platform\n| `rebuild`     | Runs `clean`, `configure` and `build` all in a row\n| `install`     | Installs Node.js header files for the given version\n| `list`        | Lists the currently installed Node.js header versions\n| `remove`      | Removes the Node.js header files for the given version\n\n\n## Command Options\n\n`node-gyp` accepts the following command options:\n\n| **Command**                       | **Description**\n|:----------------------------------|:------------------------------------------\n| `-j n`, `--jobs n`                | Run `make` in parallel. The value `max` will use all available CPU cores\n| `--target=v6.2.1`                 | Node.js version to build for (default is `process.version`)\n| `--silly`, `--loglevel=silly`     | Log all progress to console\n| `--verbose`, `--loglevel=verbose` | Log most progress to console\n| `--silent`, `--loglevel=silent`   | Don't log anything to console\n| `debug`, `--debug`                | Make Debug build (default is `Release`)\n| `--release`, `--no-debug`         | Make Release build\n| `-C $dir`, `--directory=$dir`     | Run command in different directory\n| `--make=$make`                    | Override `make` command (e.g. `gmake`)\n| `--thin=yes`                      | Enable thin static libraries\n| `--arch=$arch`                    | Set target architecture (e.g. ia32)\n| `--tarball=$path`                 | Get headers from a local tarball\n| `--devdir=$path`                  | SDK download directory (default is OS cache directory)\n| `--ensure`                        | Don't reinstall headers if already present\n| `--dist-url=$url`                 | Download header tarball from custom URL\n| `--proxy=$url`                    | Set HTTP(S) proxy for downloading header tarball\n| `--noproxy=$urls`                 | Set urls to ignore proxies when downloading header tarball\n| `--cafile=$cafile`                | Override default CA chain (to download tarball)\n| `--nodedir=$path`                 | Set the path to the node source code\n| `--python=$path`                  | Set path to the Python binary\n| `--msvs_version=$version`         | Set Visual Studio version (Windows only)\n| `--solution=$solution`            | Set Visual Studio Solution version (Windows only)\n\n## Configuration\n\n### Environment variables\n\nUse the form `npm_config_OPTION_NAME` for any of the command options listed\nabove (dashes in option names should be replaced by underscores).\n\nFor example, to set `devdir` equal to `/tmp/.gyp`, you would:\n\nRun this on Unix:\n\n```bash\n$ export npm_config_devdir=/tmp/.gyp\n```\n\nOr this on Windows:\n\n```console\n> set npm_config_devdir=c:\\temp\\.gyp\n```\n\n### `npm` configuration\n\nUse the form `OPTION_NAME` for any of the command options listed above.\n\nFor example, to set `devdir` equal to `/tmp/.gyp`, you would run:\n\n```bash\n$ npm config set [--global] devdir /tmp/.gyp\n```\n\n**Note:** Configuration set via `npm` will only be used when `node-gyp`\nis run via `npm`, not when `node-gyp` is run directly.\n\n## License\n\n`node-gyp` is available under the MIT license. See the [LICENSE\nfile](LICENSE) for details.\n",
+      "readmeFilename": "README.md",
+      "optionalDependencies": {},
+      "_dependencies": {
+        "env-paths": "^2.2.0",
+        "glob": "^7.1.4",
+        "graceful-fs": "^4.2.2",
+        "mkdirp": "^0.5.1",
+        "nopt": "^4.0.1",
+        "npmlog": "^4.1.2",
+        "request": "^2.88.0",
+        "rimraf": "^2.6.3",
+        "semver": "^5.7.1",
+        "tar": "^4.4.12",
+        "which": "^1.3.1"
+      },
+      "path": "C:\\Program Files\\nodejs\\node_modules\\node-gyp",
+      "error": "[Circular]",
+      "extraneous": false
+    },
+    "npm": {
+      "version": "6.13.7",
+      "name": "npm",
+      "description": "a package manager for JavaScript",
+      "keywords": [
+        "install",
+        "modules",
+        "package manager",
+        "package.json"
+      ],
+      "preferGlobal": true,
+      "config": {
+        "publishtest": false
+      },
+      "homepage": "https://docs.npmjs.com/",
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/cli.git"
+      },
+      "bugs": {
+        "url": "https://npm.community/c/bugs"
+      },
+      "directories": {
+        "bin": "./bin",
+        "doc": "./doc",
+        "lib": "./lib",
+        "man": "./man"
+      },
+      "main": "./lib/npm.js",
+      "bin": {
+        "npm": "bin/npm-cli.js",
+        "npx": "bin/npx-cli.js"
+      },
+      "bundleDependencies": [
+        "abbrev",
+        "ansicolors",
+        "ansistyles",
+        "aproba",
+        "archy",
+        "bin-links",
+        "bluebird",
+        "byte-size",
+        "cacache",
+        "call-limit",
+        "chownr",
+        "ci-info",
+        "cli-columns",
+        "cli-table3",
+        "cmd-shim",
+        "columnify",
+        "config-chain",
+        "debuglog",
+        "detect-indent",
+        "detect-newline",
+        "dezalgo",
+        "editor",
+        "figgy-pudding",
+        "find-npm-prefix",
+        "fs-vacuum",
+        "fs-write-stream-atomic",
+        "gentle-fs",
+        "glob",
+        "graceful-fs",
+        "has-unicode",
+        "hosted-git-info",
+        "iferr",
+        "imurmurhash",
+        "infer-owner",
+        "inflight",
+        "inherits",
+        "ini",
+        "init-package-json",
+        "is-cidr",
+        "json-parse-better-errors",
+        "JSONStream",
+        "lazy-property",
+        "libcipm",
+        "libnpm",
+        "libnpmaccess",
+        "libnpmhook",
+        "libnpmorg",
+        "libnpmsearch",
+        "libnpmteam",
+        "libnpx",
+        "lock-verify",
+        "lockfile",
+        "lodash._baseindexof",
+        "lodash._baseuniq",
+        "lodash._bindcallback",
+        "lodash._cacheindexof",
+        "lodash._createcache",
+        "lodash._getnative",
+        "lodash.clonedeep",
+        "lodash.restparam",
+        "lodash.union",
+        "lodash.uniq",
+        "lodash.without",
+        "lru-cache",
+        "meant",
+        "mississippi",
+        "mkdirp",
+        "move-concurrently",
+        "node-gyp",
+        "nopt",
+        "normalize-package-data",
+        "npm-audit-report",
+        "npm-cache-filename",
+        "npm-install-checks",
+        "npm-lifecycle",
+        "npm-package-arg",
+        "npm-packlist",
+        "npm-pick-manifest",
+        "npm-profile",
+        "npm-registry-fetch",
+        "npm-user-validate",
+        "npmlog",
+        "once",
+        "opener",
+        "osenv",
+        "pacote",
+        "path-is-inside",
+        "promise-inflight",
+        "qrcode-terminal",
+        "query-string",
+        "qw",
+        "read-cmd-shim",
+        "read-installed",
+        "read-package-json",
+        "read-package-tree",
+        "read",
+        "readable-stream",
+        "readdir-scoped-modules",
+        "request",
+        "retry",
+        "rimraf",
+        "safe-buffer",
+        "semver",
+        "sha",
+        "slide",
+        "sorted-object",
+        "sorted-union-stream",
+        "ssri",
+        "stringify-package",
+        "tar",
+        "text-table",
+        "tiny-relative-date",
+        "uid-number",
+        "umask",
+        "unique-filename",
+        "unpipe",
+        "update-notifier",
+        "uuid",
+        "validate-npm-package-license",
+        "validate-npm-package-name",
+        "which",
+        "worker-farm",
+        "write-file-atomic"
+      ],
+      "devDependencies": {
+        "deep-equal": "^1.0.1",
+        "get-stream": "^4.1.0",
+        "licensee": "^7.0.3",
+        "marked": "^0.6.3",
+        "marked-man": "^0.6.0",
+        "npm-registry-couchapp": "^2.7.3",
+        "npm-registry-mock": "^1.3.0",
+        "require-inject": "^1.4.4",
+        "sprintf-js": "^1.1.2",
+        "standard": "^11.0.1",
+        "tacks": "^1.3.0",
+        "tap": "^12.7.0",
+        "tar-stream": "^2.1.0"
+      },
+      "scripts": {
+        "dumpconf": "env | grep npm | sort | uniq",
+        "prepare": "node bin/npm-cli.js rebuild && node bin/npm-cli.js --no-audit --no-timing prune --prefix=. --no-global && rimraf test/*/*/node_modules && make -j4 mandocs",
+        "preversion": "bash scripts/update-authors.sh && git add AUTHORS && git commit -m \"update AUTHORS\" || true",
+        "licenses": "licensee --production --errors-only",
+        "tap": "tap -J --timeout 300 --no-esm",
+        "tap-cover": "tap -J --nyc-arg=--cache --coverage --timeout 600 --no-esm",
+        "lint": "standard",
+        "pretest": "npm run lint",
+        "test": "npm run test-tap --",
+        "test:nocleanup": "NO_TEST_CLEANUP=1 npm run test --",
+        "sudotest": "sudo npm run tap -- \"test/tap/*.js\"",
+        "sudotest:nocleanup": "sudo NO_TEST_CLEANUP=1 npm run tap -- \"test/tap/*.js\"",
+        "posttest": "rimraf test/npm_cache*",
+        "test-coverage": "npm run tap-cover -- \"test/tap/*.js\" \"test/network/*.js\"",
+        "test-tap": "npm run tap -- \"test/tap/*.js\" \"test/network/*.js\"",
+        "test-node": "tap --timeout 240 \"test/tap/*.js\" \"test/network/*.js\""
+      },
+      "license": "Artistic-2.0",
+      "man": [],
+      "contributors": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        },
+        {
+          "name": "Steve Steiner",
+          "email": "ssteinerX@gmail.com"
+        },
+        {
+          "name": "Mikeal Rogers",
+          "email": "mikeal.rogers@gmail.com"
+        },
+        {
+          "name": "Aaron Blohowiak",
+          "email": "aaron.blohowiak@gmail.com"
+        },
+        {
+          "name": "Martyn Smith",
+          "email": "martyn@dollyfish.net.nz"
+        },
+        {
+          "name": "Charlie Robbins",
+          "email": "charlie.robbins@gmail.com"
+        },
+        {
+          "name": "Francisco Treacy",
+          "email": "francisco.treacy@gmail.com"
+        },
+        {
+          "name": "Cliffano Subagio",
+          "email": "cliffano@gmail.com"
+        },
+        {
+          "name": "Christian Eager",
+          "email": "christian.eager@nokia.com"
+        },
+        {
+          "name": "Dav Glass",
+          "email": "davglass@gmail.com"
+        },
+        {
+          "name": "Alex K. Wolfe",
+          "email": "alexkwolfe@gmail.com"
+        },
+        {
+          "name": "James Sanders",
+          "email": "jimmyjazz14@gmail.com"
+        },
+        {
+          "name": "Reid Burke",
+          "email": "me@reidburke.com"
+        },
+        {
+          "name": "Arlo Breault",
+          "email": "arlolra@gmail.com"
+        },
+        {
+          "name": "Timo Derstappen",
+          "email": "teemow@gmail.com"
+        },
+        {
+          "name": "Bart Teeuwisse",
+          "email": "bart.teeuwisse@thecodemill.biz"
+        },
+        {
+          "name": "Ben Noordhuis",
+          "email": "info@bnoordhuis.nl"
+        },
+        {
+          "name": "Tor Valamo",
+          "email": "tor.valamo@gmail.com"
+        },
+        {
+          "name": "Whyme.Lyu",
+          "email": "5longluna@gmail.com"
+        },
+        {
+          "name": "Olivier Melcher",
+          "email": "olivier.melcher@gmail.com"
+        },
+        {
+          "name": "Tomaž Muraus",
+          "email": "kami@k5-storitve.net"
+        },
+        {
+          "name": "Evan Meagher",
+          "email": "evan.meagher@gmail.com"
+        },
+        {
+          "name": "Orlando Vazquez",
+          "email": "ovazquez@gmail.com"
+        },
+        {
+          "name": "Kai Chen",
+          "email": "kaichenxyz@gmail.com"
+        },
+        {
+          "name": "George Miroshnykov",
+          "email": "gmiroshnykov@lohika.com"
+        },
+        {
+          "name": "Geoff Flarity",
+          "email": "geoff.flarity@gmail.com"
+        },
+        {
+          "name": "Max Goodman",
+          "email": "c@chromakode.com"
+        },
+        {
+          "name": "Pete Kruckenberg",
+          "email": "pete@kruckenberg.com"
+        },
+        {
+          "name": "Laurie Harper",
+          "email": "laurie@holoweb.net"
+        },
+        {
+          "name": "Chris Wong",
+          "email": "chris@chriswongstudio.com"
+        },
+        {
+          "name": "Scott Bronson",
+          "email": "brons_github@rinspin.com"
+        },
+        {
+          "name": "Federico Romero",
+          "email": "federomero@gmail.com"
+        },
+        {
+          "name": "Visnu Pitiyanuvath",
+          "email": "visnupx@gmail.com"
+        },
+        {
+          "name": "Irakli Gozalishvili",
+          "email": "rfobic@gmail.com"
+        },
+        {
+          "name": "Mark Cahill",
+          "email": "mark@tiemonster.info"
+        },
+        {
+          "name": "Tony",
+          "email": "zearin@gonk.net"
+        },
+        {
+          "name": "Iain Sproat",
+          "email": "iainsproat@gmail.com"
+        },
+        {
+          "name": "Trent Mick",
+          "email": "trentm@gmail.com"
+        },
+        {
+          "name": "Felix Geisendörfer",
+          "email": "felix@debuggable.com"
+        },
+        {
+          "name": "Jameson Little",
+          "email": "t.jameson.little@gmail.com"
+        },
+        {
+          "name": "Conny Brunnkvist",
+          "email": "conny@fuchsia.se"
+        },
+        {
+          "name": "Will Elwood",
+          "email": "w.elwood08@gmail.com"
+        },
+        {
+          "name": "Dean Landolt",
+          "email": "dean@deanlandolt.com"
+        },
+        {
+          "name": "Oleg Efimov",
+          "email": "efimovov@gmail.com"
+        },
+        {
+          "name": "Martin Cooper",
+          "email": "mfncooper@gmail.com"
+        },
+        {
+          "name": "Jann Horn",
+          "email": "jannhorn@googlemail.com"
+        },
+        {
+          "name": "Andrew Bradley",
+          "email": "cspotcode@gmail.com"
+        },
+        {
+          "name": "Maciej Małecki",
+          "email": "me@mmalecki.com"
+        },
+        {
+          "name": "Stephen Sugden",
+          "email": "glurgle@gmail.com"
+        },
+        {
+          "name": "Michael Budde",
+          "email": "mbudde@gmail.com"
+        },
+        {
+          "name": "Jason Smith",
+          "email": "jhs@iriscouch.com"
+        },
+        {
+          "name": "Gautham Pai",
+          "email": "buzypi@gmail.com"
+        },
+        {
+          "name": "David Trejo",
+          "email": "david.daniel.trejo@gmail.com"
+        },
+        {
+          "name": "Paul Vorbach",
+          "email": "paul@vorb.de"
+        },
+        {
+          "name": "George Ornbo",
+          "email": "george@shapeshed.com"
+        },
+        {
+          "name": "Tim Oxley",
+          "email": "secoif@gmail.com"
+        },
+        {
+          "name": "Tyler Green",
+          "email": "tyler.green2@gmail.com"
+        },
+        {
+          "name": "Dave Pacheco",
+          "email": "dap@joyent.com"
+        },
+        {
+          "name": "Danila Gerasimov",
+          "email": "danila.gerasimov@gmail.com"
+        },
+        {
+          "name": "Rod Vagg",
+          "email": "rod@vagg.org"
+        },
+        {
+          "name": "Christian Howe",
+          "email": "coderarity@gmail.com"
+        },
+        {
+          "name": "Andrew Lunny",
+          "email": "alunny@gmail.com"
+        },
+        {
+          "name": "Henrik Hodne",
+          "email": "dvyjones@binaryhex.com"
+        },
+        {
+          "name": "Adam Blackburn",
+          "email": "regality@gmail.com"
+        },
+        {
+          "name": "Kris Windham",
+          "email": "kriswindham@gmail.com"
+        },
+        {
+          "name": "Jens Grunert",
+          "email": "jens.grunert@gmail.com"
+        },
+        {
+          "name": "Joost-Wim Boekesteijn",
+          "email": "joost-wim@boekesteijn.nl"
+        },
+        {
+          "name": "Dalmais Maxence",
+          "email": "root@ip-10-195-202-5.ec2.internal"
+        },
+        {
+          "name": "Marcus Ekwall",
+          "email": "marcus.ekwall@gmail.com"
+        },
+        {
+          "name": "Aaron Stacy",
+          "email": "aaron.r.stacy@gmail.com"
+        },
+        {
+          "name": "Phillip Howell",
+          "email": "phowell@cothm.org"
+        },
+        {
+          "name": "Domenic Denicola",
+          "email": "domenic@domenicdenicola.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jeremy Cantrell",
+          "email": "jmcantrell@gmail.com"
+        },
+        {
+          "name": "Ribettes",
+          "email": "patlogan29@gmail.com"
+        },
+        {
+          "name": "Don Park",
+          "email": "donpark@docuverse.com"
+        },
+        {
+          "name": "Einar Otto Stangvik",
+          "email": "einaros@gmail.com"
+        },
+        {
+          "name": "Kei Son",
+          "email": "heyacct@gmail.com"
+        },
+        {
+          "name": "Nicolas Morel",
+          "email": "marsup@gmail.com"
+        },
+        {
+          "name": "Mark Dube",
+          "email": "markisdee@gmail.com"
+        },
+        {
+          "name": "Nathan Rajlich",
+          "email": "nathan@tootallnate.net"
+        },
+        {
+          "name": "Maxim Bogushevich",
+          "email": "boga1@mail.ru"
+        },
+        {
+          "name": "Meaglin",
+          "email": "Meaglin.wasabi@gmail.com"
+        },
+        {
+          "name": "Ben Evans",
+          "email": "ben@bensbit.co.uk"
+        },
+        {
+          "name": "Nathan Zadoks",
+          "email": "nathan@nathan7.eu"
+        },
+        {
+          "name": "Brian White",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "Jed Schmidt",
+          "email": "tr@nslator.jp"
+        },
+        {
+          "name": "Ian Livingstone",
+          "email": "ianl@cs.dal.ca"
+        },
+        {
+          "name": "Patrick Pfeiffer",
+          "email": "patrick@buzzle.at"
+        },
+        {
+          "name": "Paul Miller",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "Ryan Emery",
+          "email": "seebees@gmail.com"
+        },
+        {
+          "name": "Carl Lange",
+          "email": "carl@flax.ie"
+        },
+        {
+          "name": "Jan Lehnardt",
+          "email": "jan@apache.org"
+        },
+        {
+          "name": "Stuart P. Bentley",
+          "email": "stuart@testtrack4.com"
+        },
+        {
+          "name": "Johan Sköld",
+          "email": "johan@skold.cc"
+        },
+        {
+          "name": "Stuart Knightley",
+          "email": "stuart@stuartk.com"
+        },
+        {
+          "name": "Niggler",
+          "email": "nirk.niggler@gmail.com"
+        },
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly"
+        },
+        {
+          "name": "Jaakko Manninen",
+          "email": "jaakko@rocketpack.fi"
+        },
+        {
+          "name": "Luke Arduini",
+          "email": "luke.arduini@gmail.com"
+        },
+        {
+          "name": "Larz Conwell",
+          "email": "larz@larz-laptop.(none)",
+          "url": "none"
+        },
+        {
+          "name": "Marcel Klehr",
+          "email": "mklehr@gmx.net"
+        },
+        {
+          "name": "Robert Kowalski",
+          "email": "rok@kowalski.gd"
+        },
+        {
+          "name": "Forbes Lindesay",
+          "email": "forbes@lindesay.co.uk"
+        },
+        {
+          "name": "Vaz Allen",
+          "email": "vaz@tryptid.com"
+        },
+        {
+          "name": "Jake Verbaten",
+          "email": "raynos2@gmail.com"
+        },
+        {
+          "name": "Schabse Laks",
+          "email": "Dev@SLaks.net"
+        },
+        {
+          "name": "Florian Margaine",
+          "email": "florian@margaine.com"
+        },
+        {
+          "name": "Johan Nordberg",
+          "email": "its@johan-nordberg.com"
+        },
+        {
+          "name": "Ian Babrou",
+          "email": "ibobrik@gmail.com"
+        },
+        {
+          "name": "Di Wu",
+          "email": "dwu@palantir.com"
+        },
+        {
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be"
+        },
+        {
+          "name": "Matt McClure",
+          "email": "matt.mcclure@mapmyfitness.com"
+        },
+        {
+          "name": "Matt Lunn",
+          "email": "matt@mattlunn.me.uk"
+        },
+        {
+          "name": "Alexey Kreschuk",
+          "email": "akrsch@gmail.com"
+        },
+        {
+          "name": "elisee",
+          "email": "elisee@sparklin.org"
+        },
+        {
+          "name": "Robert Gieseke",
+          "email": "robert.gieseke@gmail.com"
+        },
+        {
+          "name": "François Frisch",
+          "email": "francoisfrisch@gmail.com"
+        },
+        {
+          "name": "Trevor Burnham",
+          "email": "tburnham@hubspot.com"
+        },
+        {
+          "name": "Alan Shaw",
+          "email": "alan@freestyle-developments.co.uk"
+        },
+        {
+          "name": "TJ Holowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "Nicholas Kinsey",
+          "email": "pyro@feisty.io"
+        },
+        {
+          "name": "Paulo Cesar",
+          "email": "pauloc062@gmail.com"
+        },
+        {
+          "name": "Elan Shanker",
+          "email": "elan.shanker@gmail.com"
+        },
+        {
+          "name": "Jon Spencer",
+          "email": "jon@jonspencer.ca"
+        },
+        {
+          "name": "Jason Diamond",
+          "email": "jason@diamond.name"
+        },
+        {
+          "name": "Maximilian Antoni",
+          "email": "mail@maxantoni.de"
+        },
+        {
+          "name": "Thom Blake",
+          "email": "tblake@brightroll.com"
+        },
+        {
+          "name": "Jess Martin",
+          "email": "jessmartin@gmail.com"
+        },
+        {
+          "name": "Spain Train",
+          "email": "michael.spainhower@opower.com"
+        },
+        {
+          "name": "Alex Rodionov",
+          "email": "p0deje@gmail.com"
+        },
+        {
+          "name": "Matt Colyer",
+          "email": "matt@colyer.name"
+        },
+        {
+          "name": "Evan You",
+          "email": "yyx990803@gmail.com"
+        },
+        {
+          "name": "bitspill",
+          "email": "bitspill+github@bitspill.net"
+        },
+        {
+          "name": "Gabriel Falkenberg",
+          "email": "gabriel.falkenberg@gmail.com"
+        },
+        {
+          "name": "Alexej Yaroshevich",
+          "email": "alex@qfox.ru"
+        },
+        {
+          "name": "Quim Calpe",
+          "email": "quim@kalpe.com"
+        },
+        {
+          "name": "Steve Mason",
+          "email": "stevem@brandwatch.com"
+        },
+        {
+          "name": "Wil Moore III",
+          "email": "wil.moore@wilmoore.com"
+        },
+        {
+          "name": "Sergey Belov",
+          "email": "peimei@ya.ru"
+        },
+        {
+          "name": "Tom Huang",
+          "email": "hzlhu.dargon@gmail.com"
+        },
+        {
+          "name": "CamilleM",
+          "email": "camille.moulin@alterway.fr"
+        },
+        {
+          "name": "Sébastien Santoro",
+          "email": "dereckson@espace-win.org"
+        },
+        {
+          "name": "Evan Lucas",
+          "email": "evan@btc.com"
+        },
+        {
+          "name": "Quinn Slack",
+          "email": "qslack@qslack.com"
+        },
+        {
+          "name": "Alex Kocharin",
+          "email": "alex@kocharin.ru"
+        },
+        {
+          "name": "Daniel Santiago",
+          "email": "daniel.santiago@highlevelwebs.com"
+        },
+        {
+          "name": "Denis Gladkikh",
+          "email": "outcoldman@gmail.com"
+        },
+        {
+          "name": "Andrew Horton",
+          "email": "andrew.j.horton@gmail.com"
+        },
+        {
+          "name": "Zeke Sikelianos",
+          "email": "zeke@sikelianos.com"
+        },
+        {
+          "name": "Dylan Greene",
+          "email": "dylang@gmail.com"
+        },
+        {
+          "name": "Franck Cuny",
+          "email": "franck.cuny@gmail.com"
+        },
+        {
+          "name": "Yeonghoon Park",
+          "email": "sola92@gmail.com"
+        },
+        {
+          "name": "Rafael de Oleza",
+          "email": "rafa@spotify.com"
+        },
+        {
+          "name": "Mikola Lysenko",
+          "email": "mikolalysenko@gmail.com"
+        },
+        {
+          "name": "Yazhong Liu",
+          "email": "yorkiefixer@gmail.com"
+        },
+        {
+          "name": "Neil Gentleman",
+          "email": "ngentleman@gmail.com"
+        },
+        {
+          "name": "Kris Kowal",
+          "email": "kris.kowal@cixar.com"
+        },
+        {
+          "name": "Alex Gorbatchev",
+          "email": "alex.gorbatchev@gmail.com"
+        },
+        {
+          "name": "Shawn Wildermuth",
+          "email": "shawn@wildermuth.com"
+        },
+        {
+          "name": "Wesley de Souza",
+          "email": "wesleywex@gmail.com"
+        },
+        {
+          "name": "yoyoyogi",
+          "email": "yogesh.k@gmail.com"
+        },
+        {
+          "name": "J. Tangelder",
+          "email": "j.tangelder@gmail.com"
+        },
+        {
+          "name": "Jean Lauliac",
+          "email": "jean@lauliac.com"
+        },
+        {
+          "name": "Andrey Kislyuk",
+          "email": "kislyuk@gmail.com"
+        },
+        {
+          "name": "Thorsten Lorenz",
+          "email": "thlorenz@gmx.de"
+        },
+        {
+          "name": "Julian Gruber",
+          "email": "julian@juliangruber.com"
+        },
+        {
+          "name": "Benjamin Coe",
+          "email": "bencoe@gmail.com"
+        },
+        {
+          "name": "Alex Ford",
+          "email": "Alex.Ford@CodeTunnel.com"
+        },
+        {
+          "name": "Matt Hickford",
+          "email": "matt.hickford@gmail.com"
+        },
+        {
+          "name": "Sean McGivern",
+          "email": "sean.mcgivern@rightscale.com"
+        },
+        {
+          "name": "C J Silverio",
+          "email": "ceejceej@gmail.com"
+        },
+        {
+          "name": "Robin Tweedie",
+          "email": "robin@songkick.com"
+        },
+        {
+          "name": "Miroslav Bajtoš",
+          "email": "miroslav@strongloop.com"
+        },
+        {
+          "name": "David Glasser",
+          "email": "glasser@davidglasser.net"
+        },
+        {
+          "name": "Gianluca Casati",
+          "email": "casati_gianluca@yahoo.it"
+        },
+        {
+          "name": "Forrest L Norvell",
+          "email": "ogd@aoaioxxysz.net"
+        },
+        {
+          "name": "Karsten Tinnefeld",
+          "email": "k.tinnefeld@googlemail.com"
+        },
+        {
+          "name": "Bryan Burgers",
+          "email": "bryan@burgers.io"
+        },
+        {
+          "name": "David Beitey",
+          "email": "david@davidjb.com"
+        },
+        {
+          "name": "Evan You",
+          "email": "yyou@google.com"
+        },
+        {
+          "name": "Zach Pomerantz",
+          "email": "zmp@umich.edu"
+        },
+        {
+          "name": "Chris Williams",
+          "email": "cwilliams88@gmail.com"
+        },
+        {
+          "name": "sudodoki",
+          "email": "smd.deluzion@gmail.com"
+        },
+        {
+          "name": "Mick Thompson",
+          "email": "dthompson@gmail.com"
+        },
+        {
+          "name": "Felix Rabe",
+          "email": "felix@rabe.io"
+        },
+        {
+          "name": "Michael Hayes",
+          "email": "michael@hayes.io"
+        },
+        {
+          "name": "Chris Dickinson",
+          "email": "christopher.s.dickinson@gmail.com"
+        },
+        {
+          "name": "Bradley Meck",
+          "email": "bradley.meck@gmail.com"
+        },
+        {
+          "name": "GeJ",
+          "email": "geraud@gcu.info"
+        },
+        {
+          "name": "Andrew Terris",
+          "email": "atterris@gmail.com"
+        },
+        {
+          "name": "Michael Nisi",
+          "email": "michael.nisi@gmail.com"
+        },
+        {
+          "name": "fengmk2",
+          "email": "fengmk2@gmail.com"
+        },
+        {
+          "name": "Adam Meadows",
+          "email": "adam.meadows@gmail.com"
+        },
+        {
+          "name": "Chulki Lee",
+          "email": "chulki.lee@gmail.com"
+        },
+        {
+          "name": "不四",
+          "email": "busi.hyy@taobao.com"
+        },
+        {
+          "name": "dead_horse",
+          "email": "dead_horse@qq.com"
+        },
+        {
+          "name": "Kenan Yildirim",
+          "email": "kenan@kenany.me"
+        },
+        {
+          "name": "Laurie Voss",
+          "email": "git@seldo.com"
+        },
+        {
+          "name": "Rebecca Turner",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "Hunter Loftis",
+          "email": "hunter@hunterloftis.com"
+        },
+        {
+          "name": "Peter Richardson",
+          "email": "github@zoomy.net"
+        },
+        {
+          "name": "Jussi Kalliokoski",
+          "email": "jussi.kalliokoski@gmail.com"
+        },
+        {
+          "name": "Filip Weiss",
+          "email": "me@fiws.net"
+        },
+        {
+          "name": "Timo Weiß",
+          "email": "timoweiss@Timo-MBP.local"
+        },
+        {
+          "name": "Christopher Hiller",
+          "email": "chiller@badwing.com"
+        },
+        {
+          "name": "Jérémy Lal",
+          "email": "kapouer@melix.org"
+        },
+        {
+          "name": "Anders Janmyr",
+          "email": "anders@janmyr.com"
+        },
+        {
+          "name": "Chris Meyers",
+          "email": "chris.meyers.fsu@gmail.com"
+        },
+        {
+          "name": "Ludwig Magnusson",
+          "email": "ludwig@mediatool.com"
+        },
+        {
+          "name": "Wout Mertens",
+          "email": "Wout.Mertens@gmail.com"
+        },
+        {
+          "name": "Nick Santos",
+          "email": "nick@medium.com"
+        },
+        {
+          "name": "Terin Stock",
+          "email": "terinjokes@gmail.com"
+        },
+        {
+          "name": "Faiq Raza",
+          "email": "faiqrazarizvi@gmail.com"
+        },
+        {
+          "name": "Thomas Torp",
+          "email": "thomas@erupt.no"
+        },
+        {
+          "name": "Sam Mikes",
+          "email": "smikes@cubane.com"
+        },
+        {
+          "name": "Mat Tyndall",
+          "email": "mat.tyndall@gmail.com"
+        },
+        {
+          "name": "Tauren Mills",
+          "email": "tauren@sportzing.com"
+        },
+        {
+          "name": "Ron Martinez",
+          "email": "ramartin.net@gmail.com"
+        },
+        {
+          "name": "Kazuhito Hokamura",
+          "email": "k.hokamura@gmail.com"
+        },
+        {
+          "name": "Tristan Davies",
+          "email": "github@tristan.io"
+        },
+        {
+          "name": "David Volm",
+          "email": "david@volminator.com"
+        },
+        {
+          "name": "Lin Clark",
+          "email": "lin.w.clark@gmail.com"
+        },
+        {
+          "name": "Ben Page",
+          "email": "bpage@dewalch.com"
+        },
+        {
+          "name": "Jeff Jo",
+          "email": "jeffjo@squareup.com"
+        },
+        {
+          "name": "martinvd",
+          "email": "martinvdpub@gmail.com"
+        },
+        {
+          "name": "Mark J. Titorenko",
+          "email": "nospam-github.com@titorenko.net"
+        },
+        {
+          "name": "Oddur Sigurdsson",
+          "email": "oddurs@gmail.com"
+        },
+        {
+          "name": "Eric Mill",
+          "email": "eric@konklone.com"
+        },
+        {
+          "name": "Gabriel Barros",
+          "email": "descartavel1@gmail.com"
+        },
+        {
+          "name": "KevinSheedy",
+          "email": "kevinsheedy@gmail.com"
+        },
+        {
+          "name": "Aleksey Smolenchuk",
+          "email": "aleksey@uber.com"
+        },
+        {
+          "name": "Ed Morley",
+          "email": "emorley@mozilla.com"
+        },
+        {
+          "name": "Blaine Bublitz",
+          "email": "blaine@iceddev.com"
+        },
+        {
+          "name": "Andrey Fedorov",
+          "email": "anfedorov@gmail.com"
+        },
+        {
+          "name": "Daijiro Wachi",
+          "email": "daijiro.wachi@gmail.com"
+        },
+        {
+          "name": "Luc Thevenard",
+          "email": "lucthevenard@gmail.com"
+        },
+        {
+          "name": "Aria Stewart",
+          "email": "aredridel@nbtsc.org"
+        },
+        {
+          "name": "Charlie Rudolph",
+          "email": "charles.w.rudolph@gmail.com"
+        },
+        {
+          "name": "Vladimir Rutsky",
+          "email": "rutsky@users.noreply.github.com"
+        },
+        {
+          "name": "Isaac Murchie",
+          "email": "isaac@saucelabs.com"
+        },
+        {
+          "name": "Marcin Wosinek",
+          "email": "marcin.wosinek@gmail.com"
+        },
+        {
+          "name": "David Marr",
+          "email": "davemarr@gmail.com"
+        },
+        {
+          "name": "Bryan English",
+          "email": "bryan@bryanenglish.com"
+        },
+        {
+          "name": "Anthony Zotti",
+          "email": "amZotti@users.noreply.github.com"
+        },
+        {
+          "name": "Karl Horky",
+          "email": "karl.horky@gmail.com"
+        },
+        {
+          "name": "Jordan Harband",
+          "email": "ljharb@gmail.com"
+        },
+        {
+          "name": "Guðlaugur Stefán Egilsson",
+          "email": "gulli@kolibri.is"
+        },
+        {
+          "name": "Helge Skogly Holm",
+          "email": "helge.holm@gmail.com"
+        },
+        {
+          "name": "Peter A. Shevtsov",
+          "email": "petr.shevtsov@gmail.com"
+        },
+        {
+          "name": "Alain Kalker",
+          "email": "a.c.kalker@gmail.com"
+        },
+        {
+          "name": "Bryant Williams",
+          "email": "b.n.williams@gmail.com"
+        },
+        {
+          "name": "Jonas Weber",
+          "email": "github@jonasw.de"
+        },
+        {
+          "name": "Tim Whidden",
+          "email": "twhid@twhid.com"
+        },
+        {
+          "name": "Andreas",
+          "email": "functino@users.noreply.github.com"
+        },
+        {
+          "name": "Karolis Narkevicius",
+          "email": "karolis.n@gmail.com"
+        },
+        {
+          "name": "Adrian Lynch",
+          "email": "adi_ady_ade@hotmail.com"
+        },
+        {
+          "name": "Richard Littauer",
+          "email": "richard.littauer@gmail.com"
+        },
+        {
+          "name": "Oli Evans",
+          "email": "oli@zilla.org.uk"
+        },
+        {
+          "name": "Matt Brennan",
+          "email": "mattyb1000@gmail.com"
+        },
+        {
+          "name": "Jeff Barczewski",
+          "email": "jeff.barczewski@gmail.com"
+        },
+        {
+          "name": "Danny Fritz",
+          "email": "dannyfritz@gmail.com"
+        },
+        {
+          "name": "Takaya Kobayashi",
+          "email": "jigsaw@live.jp"
+        },
+        {
+          "name": "Ra'Shaun Stovall",
+          "email": "rashaunstovall@gmail.com"
+        },
+        {
+          "name": "Julien Meddah",
+          "email": "julien.meddah@deveryware.com"
+        },
+        {
+          "name": "Michiel Sikma",
+          "email": "michiel@wedemandhtml.com"
+        },
+        {
+          "name": "Jakob Krigovsky",
+          "email": "jakob.krigovsky@gmail.com"
+        },
+        {
+          "name": "Charmander",
+          "email": "~@charmander.me"
+        },
+        {
+          "name": "Erik Wienhold",
+          "email": "git@ewie.name"
+        },
+        {
+          "name": "James Butler",
+          "email": "james.butler@sandfox.co.uk"
+        },
+        {
+          "name": "Kevin Kragenbrink",
+          "email": "kevin@gaikai.com"
+        },
+        {
+          "name": "Arnaud Rinquin",
+          "email": "rinquin.arnaud@gmail.com"
+        },
+        {
+          "name": "Mike MacCana",
+          "email": "mike.maccana@gmail.com"
+        },
+        {
+          "name": "Antti Mattila",
+          "email": "anttti@fastmail.fm"
+        },
+        {
+          "name": "laiso",
+          "email": "laiso@lai.so"
+        },
+        {
+          "name": "Matt Zorn",
+          "email": "zornme@gmail.com"
+        },
+        {
+          "name": "Kyle Mitchell",
+          "email": "kyle@kemitchell.com"
+        },
+        {
+          "name": "Jeremiah Senkpiel",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "Michael Klein",
+          "email": "mischkl@users.noreply.github.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Victor",
+          "email": "victor.shih@gmail.com"
+        },
+        {
+          "name": "thefourtheye",
+          "email": "thechargingvolcano@gmail.com"
+        },
+        {
+          "name": "Clay Carpenter",
+          "email": "claycarpenter@gmail.com"
+        },
+        {
+          "name": "bangbang93",
+          "email": "bangbang93@163.com"
+        },
+        {
+          "name": "Nick Malaguti",
+          "email": "nmalaguti@palantir.com"
+        },
+        {
+          "name": "Cedric Nelson",
+          "email": "cedric.nelson@gmail.com"
+        },
+        {
+          "name": "Kat Marchán",
+          "email": "kzm@zkat.tech"
+        },
+        {
+          "name": "Andrew",
+          "email": "talktome@aboutandrew.co.uk"
+        },
+        {
+          "name": "Eduardo Pinho",
+          "email": "enet4mikeenet@gmail.com"
+        },
+        {
+          "name": "Rachel Hutchison",
+          "email": "rhutchix@intel.com"
+        },
+        {
+          "name": "Ryan Temple",
+          "email": "ryantemple145@gmail.com"
+        },
+        {
+          "name": "Eugene Sharygin",
+          "email": "eush77@gmail.com"
+        },
+        {
+          "name": "James Talmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "jane arc",
+          "email": "jane@uber.com"
+        },
+        {
+          "name": "Joseph Dykstra",
+          "email": "josephdykstra@gmail.com"
+        },
+        {
+          "name": "Andrew Crites",
+          "email": "ajcrites@gmail.com"
+        },
+        {
+          "name": "Joshua Egan",
+          "email": "josh-egan@users.noreply.github.com"
+        },
+        {
+          "name": "Carlos Alberto",
+          "email": "euprogramador@gmail.com"
+        },
+        {
+          "name": "Thomas Cort",
+          "email": "thomasc@ssimicro.com"
+        },
+        {
+          "name": "Thaddee Tyl",
+          "email": "thaddee.tyl@gmail.com"
+        },
+        {
+          "name": "Steve Klabnik",
+          "email": "steve@steveklabnik.com"
+        },
+        {
+          "name": "Andrew Murray",
+          "email": "radarhere@gmail.com"
+        },
+        {
+          "name": "Stephan Bönnemann",
+          "email": "stephan@excellenteasy.com"
+        },
+        {
+          "name": "Kyle M. Tarplee",
+          "email": "kyle.tarplee@numerica.us"
+        },
+        {
+          "name": "Derek Peterson",
+          "email": "derekpetey@gmail.com"
+        },
+        {
+          "name": "Greg Whiteley",
+          "email": "greg.whiteley@atomos.com"
+        },
+        {
+          "name": "murgatroid99",
+          "email": "mlumish@google.com"
+        },
+        {
+          "name": "Marcin Cieslak",
+          "email": "saper@saper.info"
+        },
+        {
+          "name": "João Reis",
+          "email": "reis@janeasystems.com"
+        },
+        {
+          "name": "Matthew Hasbach",
+          "email": "hasbach.git@gmail.com"
+        },
+        {
+          "name": "Jon Hall",
+          "email": "jon_hall@outlook.com"
+        },
+        {
+          "name": "Anna Henningsen",
+          "email": "sqrt@entless.org"
+        },
+        {
+          "name": "James Treworgy",
+          "email": "jamietre@gmail.com"
+        },
+        {
+          "name": "James Hartig",
+          "email": "james@levenlabs.com"
+        },
+        {
+          "name": "Stephanie Snopek",
+          "email": "stephaniesnopek@gmail.com"
+        },
+        {
+          "name": "Kent C. Dodds",
+          "email": "kent@doddsfamily.us"
+        },
+        {
+          "name": "Aaron Krause",
+          "email": "aaronjkrause@gmail.com"
+        },
+        {
+          "name": "Daniel K O'Leary",
+          "email": "daniel@dko.io"
+        },
+        {
+          "name": "fscherwi",
+          "email": "fscherwi@users.noreply.github.com"
+        },
+        {
+          "name": "Thomas Reggi",
+          "email": "thomas@reggi.com"
+        },
+        {
+          "name": "Thomas Michael McTiernan",
+          "email": "thomasmctiernan@gmail.com"
+        },
+        {
+          "name": "Jason Kurian",
+          "email": "JaKXz@users.noreply.github.com"
+        },
+        {
+          "name": "Sebastiaan Deckers",
+          "email": "seb@ninja.sg"
+        },
+        {
+          "name": "lady3bean",
+          "email": "lady3bean@users.noreply.github.com"
+        },
+        {
+          "name": "Tomi Carr",
+          "email": "TaMe3971@users.noreply.github.com"
+        },
+        {
+          "name": "Juan Caicedo",
+          "email": "retiredcanadianpoet@gmail.com"
+        },
+        {
+          "name": "Ashley Williams",
+          "email": "ashley@npmjs.com"
+        },
+        {
+          "name": "Andrew Marcinkevičius",
+          "email": "andrew.web@ifdattic.com"
+        },
+        {
+          "name": "Jorrit Schippers",
+          "email": "jorrit@ncode.nl"
+        },
+        {
+          "name": "Alex Lukin",
+          "email": "alex.lukin@softgrad.com"
+        },
+        {
+          "name": "Aria Stewart",
+          "email": "aredridel@dinhe.net"
+        },
+        {
+          "name": "Tiago Rodrigues",
+          "email": "tmcrodrigues@gmail.com"
+        },
+        {
+          "name": "Tim",
+          "email": "tim-github@baverstock.org.uk"
+        },
+        {
+          "name": "Nick Williams",
+          "email": "WickyNilliams@users.noreply.github.com"
+        },
+        {
+          "name": "Louis Larry",
+          "email": "louis.larry@gmail.com"
+        },
+        {
+          "name": "Ben Gotow",
+          "email": "bengotow@gmail.com"
+        },
+        {
+          "name": "Jakub Gieryluk",
+          "email": "jakub.g.opensource@gmail.com"
+        },
+        {
+          "name": "Kevin Lorenz",
+          "email": "mail@kevinlorenz.com"
+        },
+        {
+          "name": "Martin von Gagern",
+          "email": "Martin.vGagern@gmx.net"
+        },
+        {
+          "name": "Eymen Gunay",
+          "email": "eymen@egunay.com"
+        },
+        {
+          "name": "Martin Ek",
+          "email": "mail@ekmartin.com"
+        },
+        {
+          "name": "Rafał Pocztarski",
+          "email": "r.pocztarski@gmail.com"
+        },
+        {
+          "name": "Mark Reeder",
+          "email": "mreeder@uber.com"
+        },
+        {
+          "name": "Chris Rebert",
+          "email": "github@chrisrebert.com"
+        },
+        {
+          "name": "Scott Addie",
+          "email": "tobias.addie@gmail.com"
+        },
+        {
+          "name": "Jeff McMahan",
+          "email": "jeffrey.lee.mcmahan@gmail.com"
+        },
+        {
+          "name": "Tim Krins",
+          "email": "timkrins@gmail.com"
+        },
+        {
+          "name": "Hal Henke",
+          "email": "halhenke@gmail.com"
+        },
+        {
+          "name": "Julian Simioni",
+          "email": "julian@simioni.org"
+        },
+        {
+          "name": "Jimb Esser",
+          "email": "jimb@yahoo-inc.com"
+        },
+        {
+          "name": "Alexis Campailla",
+          "email": "alexis@janeasystems.com"
+        },
+        {
+          "name": "Chris Chua",
+          "email": "chris.sirhc@gmail.com"
+        },
+        {
+          "name": "Beau Gunderson",
+          "email": "beau@beaugunderson.com"
+        },
+        {
+          "name": "Dave Galbraith",
+          "email": "dave@jut.io"
+        },
+        {
+          "name": "s100",
+          "email": "shughes1@uk.ibm.com"
+        },
+        {
+          "name": "Sergey Simonchik",
+          "email": "sergey.simonchik@jetbrains.com"
+        },
+        {
+          "name": "Vanja Radovanović",
+          "email": "elvanja@gmail.com"
+        },
+        {
+          "name": "Jonathan Persson",
+          "email": "persson.jonathan@gmail.com"
+        },
+        {
+          "name": "Vedat Mahir YILMAZ",
+          "email": "mahir@vedatmahir.com"
+        },
+        {
+          "name": "Samuel Reed",
+          "email": "samuel.trace.reed@gmail.com"
+        },
+        {
+          "name": "Rafał Legiędź",
+          "email": "rafal.legiedz@gmail.com"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Xcat Liu",
+          "email": "xcatliu@gmail.com"
+        },
+        {
+          "name": "harryh",
+          "email": "Aourin@users.noreply.github.com"
+        },
+        {
+          "name": "Prayag Verma",
+          "email": "prayag.verma@gmail.com"
+        },
+        {
+          "name": "Neil Kistner",
+          "email": "neil.kistner@gmail.com"
+        },
+        {
+          "name": "Zoujie Wzj",
+          "email": "zoujie.wzj@alibaba-inc.com"
+        },
+        {
+          "name": "Ryan Hendrickson",
+          "email": "ryan.hendrickson@alum.mit.edu"
+        },
+        {
+          "name": "Arturo Coronel",
+          "email": "aoitsu3@gmail.com"
+        },
+        {
+          "name": "Hutson Betts",
+          "email": "hbetts@factset.com"
+        },
+        {
+          "name": "Lewis Cowper",
+          "email": "lewis.cowper@googlemail.com"
+        },
+        {
+          "name": "Adam Byrne",
+          "email": "misterbyrne@gmail.com"
+        },
+        {
+          "name": "Ifeanyi Oraelosi",
+          "email": "ifeanyioraelosi@gmail.com"
+        },
+        {
+          "name": "Robert Ludwig",
+          "email": "rob.ludwig@rideamigos.com"
+        },
+        {
+          "name": "Chris Warren",
+          "email": "chris@ixalon.net"
+        },
+        {
+          "name": "Scott Plumlee",
+          "email": "scott@plumlee.org"
+        },
+        {
+          "name": "Daniel Pedersen",
+          "email": "daniel@scandinav.se"
+        },
+        {
+          "name": "rhgb",
+          "email": "kaiserdaemon@gmail.com"
+        },
+        {
+          "name": "doug.wade",
+          "email": "doug.wade@redfin.com"
+        },
+        {
+          "name": "Zac",
+          "email": "zdoege@gm.slc.edu"
+        },
+        {
+          "name": "GriffinSchneider",
+          "email": "griffinschneider@gmail.com"
+        },
+        {
+          "name": "Andres Kalle",
+          "email": "mjomble@gmail.com"
+        },
+        {
+          "name": "thefourtheye",
+          "email": "thefourtheye@users.noreply.github.com"
+        },
+        {
+          "name": "Yael",
+          "email": "yaelz@users.noreply.github.com"
+        },
+        {
+          "name": "Yann Odeyer",
+          "email": "yann@odeyer.com"
+        },
+        {
+          "name": "James Monger",
+          "email": "jameskmonger@hotmail.co.uk"
+        },
+        {
+          "name": "Thomas Hallock",
+          "email": "thomas@1stdibs.com"
+        },
+        {
+          "name": "Paul Irish",
+          "email": "paul.irish@gmail.com"
+        },
+        {
+          "name": "Paul O'Leary McCann",
+          "email": "polm@dampfkraft.com"
+        },
+        {
+          "name": "Francis Gulotta",
+          "email": "wizard@roborooter.com"
+        },
+        {
+          "name": "Felix Rieseberg",
+          "email": "felix@felixrieseberg.com"
+        },
+        {
+          "name": "Glen Mailer",
+          "email": "glenjamin@gmail.com"
+        },
+        {
+          "name": "Federico Brigante",
+          "email": "bfred-it@users.noreply.github.com"
+        },
+        {
+          "name": "Steve Mao",
+          "email": "maochenyan@gmail.com"
+        },
+        {
+          "name": "Anna Henningsen",
+          "email": "anna@addaleax.net"
+        },
+        {
+          "name": "Rachel Evans",
+          "email": "git@rve.org.uk"
+        },
+        {
+          "name": "Sam Minnee",
+          "email": "sam@silverstripe.com"
+        },
+        {
+          "name": "Zirak",
+          "email": "zirakertan@gmail.com"
+        },
+        {
+          "name": "Daniel Lupu",
+          "email": "lupu.daniel.f@gmail.com"
+        },
+        {
+          "name": "Gianluca Casati",
+          "email": "fibo@users.noreply.github.com"
+        },
+        {
+          "name": "André Herculano",
+          "email": "andresilveirah@gmail.com"
+        },
+        {
+          "name": "Wyatt Preul",
+          "email": "wpreul@gmail.com"
+        },
+        {
+          "name": "Myles Borins",
+          "email": "mborins@us.ibm.com"
+        },
+        {
+          "name": "Elliot Lee",
+          "email": "github.public@intelliot.com"
+        },
+        {
+          "name": "Dmitry Kirilyuk",
+          "email": "gk.joker@gmail.com"
+        },
+        {
+          "name": "Aaron Tribou",
+          "email": "aaron.tribou@gmail.com"
+        },
+        {
+          "name": "Tapani Moilanen",
+          "email": "moilanen.tapani@gmail.com"
+        },
+        {
+          "name": "Han Seoul-Oh",
+          "email": "laughinghan@gmail.com"
+        },
+        {
+          "name": "Aleksey Shvayka",
+          "email": "shvaikalesh@gmail.com"
+        },
+        {
+          "name": "Emma Ramirez",
+          "email": "ramirez.emma.g@gmail.com"
+        },
+        {
+          "name": "Julian Duque",
+          "email": "julianduquej@gmail.com"
+        },
+        {
+          "name": "Simon MacDonald",
+          "email": "simon.macdonald@gmail.com"
+        },
+        {
+          "name": "Adam Stankiewicz",
+          "email": "sheerun@sher.pl"
+        },
+        {
+          "name": "Gregers Gram Rygg",
+          "email": "gregers.gram.rygg@finn.no"
+        },
+        {
+          "name": "Peter Dave Hello",
+          "email": "hsu@peterdavehello.org"
+        },
+        {
+          "name": "Jordan Klassen",
+          "email": "forivall@gmail.com"
+        },
+        {
+          "name": "Jason Palmer",
+          "email": "jason@jason-palmer.com"
+        },
+        {
+          "name": "Michael Hart",
+          "email": "michael.hart.au@gmail.com"
+        },
+        {
+          "name": "Sasha Koss",
+          "email": "koss@nocorp.me"
+        },
+        {
+          "name": "David Emmerson",
+          "email": "david.emmerson@gmail.com"
+        },
+        {
+          "name": "Christophe Hurpeau",
+          "email": "christophe@hurpeau.com"
+        },
+        {
+          "name": "Daniel Paz-Soldan",
+          "email": "daniel.pazsoldan@gmail.com"
+        },
+        {
+          "name": "Sakthipriyan Vairamani",
+          "email": "thechargingvolcano@gmail.com"
+        },
+        {
+          "name": "Zach Renner",
+          "email": "zarenner@microsoft.com"
+        },
+        {
+          "name": "Christopher Hiller",
+          "email": "boneskull@boneskull.com"
+        },
+        {
+          "name": "Joshua Bennett",
+          "email": "legodudejb@gmail.com"
+        },
+        {
+          "name": "Andrew Meyer",
+          "email": "andrewm.bpi@gmail.com"
+        },
+        {
+          "name": "Michael Jasper",
+          "email": "mdjasper@gmail.com"
+        },
+        {
+          "name": "Max",
+          "email": "contact@mstoiber.com"
+        },
+        {
+          "name": "Szymon Nowak",
+          "email": "szimek@gmail.com"
+        },
+        {
+          "name": "Jason Karns",
+          "email": "jason.karns@gmail.com"
+        },
+        {
+          "name": "Lucas Holmquist",
+          "email": "lholmqui@redhat.com"
+        },
+        {
+          "name": "Ionică Bizău",
+          "email": "bizauionica@gmail.com"
+        },
+        {
+          "name": "Alex Chesters",
+          "email": "AlexChesters@users.noreply.github.com"
+        },
+        {
+          "name": "Robert Gay",
+          "email": "robert.gay@redfin.com"
+        },
+        {
+          "name": "Steven",
+          "email": "stevokk@hotmail.com"
+        },
+        {
+          "name": "Tim Caswell",
+          "email": "tim@creationix.com"
+        },
+        {
+          "name": "Anna Henningsen",
+          "email": "github@addaleax.net"
+        },
+        {
+          "name": "Kim Røen",
+          "email": "kim@kimroen.com"
+        },
+        {
+          "name": "Douglas Wilson",
+          "email": "dougwilson@live.com"
+        },
+        {
+          "name": "Mike Engel",
+          "email": "mike@mike-engel.com"
+        },
+        {
+          "name": "baderbuddy",
+          "email": "baderbuddy@gmail.com"
+        },
+        {
+          "name": "Alex Jordan",
+          "email": "alex@strugee.net"
+        },
+        {
+          "name": "Ville Lahdenvuo",
+          "email": "tuhoojabotti@gmail.com"
+        },
+        {
+          "name": "Natalie Wolfe",
+          "email": "nwolfe@newrelic.com"
+        },
+        {
+          "name": "Andrew Schmadel",
+          "email": "aschmadel@learningobjects.com"
+        },
+        {
+          "name": "Jonah Moses",
+          "email": "jonahkmoses@gmail.com"
+        },
+        {
+          "name": "Daijirō Wachi",
+          "email": "daijiro.wachi@gmail.com"
+        },
+        {
+          "name": "Dmitry Litvinchenko",
+          "email": "karaliti@gmail.com"
+        },
+        {
+          "name": "chocolateboy",
+          "email": "chocolate@cpan.org"
+        },
+        {
+          "name": "Henry Zhu",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "Nate Goldman",
+          "email": "ungoldman@gmail.com"
+        },
+        {
+          "name": "Ted Yavuzkurt",
+          "email": "hello@TedY.io"
+        },
+        {
+          "name": "Arseniy Maximov",
+          "email": "localhost@kern0.ru"
+        },
+        {
+          "name": "Evgeny Kulikov",
+          "email": "beyondcompute@users.noreply.github.com"
+        },
+        {
+          "name": "Сковорода Никита Андреевич",
+          "email": "chalkerx@gmail.com"
+        },
+        {
+          "name": "Carol",
+          "email": "carol.nichols@gmail.com",
+          "url": "Nichols || Goulding"
+        },
+        {
+          "name": "Jarid Margolin",
+          "email": "jaridmargolin@gmail.com"
+        },
+        {
+          "name": "David Cook",
+          "email": "divergentdave@gmail.com"
+        },
+        {
+          "name": "Brian Dukes",
+          "email": "bdukes@engagesoftware.com"
+        },
+        {
+          "name": "Jed Fox",
+          "email": "git@twopointzero.us"
+        },
+        {
+          "name": "Pavlo Liulia",
+          "email": "pavloblack@hotmail.com"
+        },
+        {
+          "name": "Ján Dzurek",
+          "email": "famousgarkin@outlook.com"
+        },
+        {
+          "name": "Lucas Theisen",
+          "email": "ltheisen@mitre.org"
+        },
+        {
+          "name": "Mike Sherov",
+          "email": "mike.sherov@gmail.com"
+        },
+        {
+          "name": "薛定谔的猫",
+          "email": "hh_2013@foxmail.com"
+        },
+        {
+          "name": "Paweł Lula",
+          "email": "pavloblack@hotmail.com"
+        },
+        {
+          "name": "Jakob Krigovsky",
+          "email": "jakob@krigovsky.com"
+        },
+        {
+          "name": "George Rawlinson",
+          "email": "george@rawlinson.net.nz"
+        },
+        {
+          "name": "Jack Nagel",
+          "email": "jacknagel@users.noreply.github.com"
+        },
+        {
+          "name": "Andreas Kohn",
+          "email": "andreas.kohn@gmail.com"
+        },
+        {
+          "name": "Jason Wohlgemuth",
+          "email": "jhwohlgemuth@users.noreply.github.com"
+        },
+        {
+          "name": "Ryan Graham",
+          "email": "r.m.graham@gmail.com"
+        },
+        {
+          "name": "Hirse",
+          "email": "jan.pilzer@gmx.de"
+        },
+        {
+          "name": "Colin Rotherham",
+          "email": "work@colinr.com"
+        },
+        {
+          "name": "Aki",
+          "email": "hi@akiro.se"
+        },
+        {
+          "name": "Emily Marigold Klassen",
+          "email": "forivall@gmail.com"
+        },
+        {
+          "name": "Ramana Venkata",
+          "email": "idlike2dream@gmail.com"
+        },
+        {
+          "name": "kierendixon",
+          "email": "knitesoulja@hotmail.com"
+        },
+        {
+          "name": "Rácz Tibor Zoltán",
+          "email": "racztiborzoltan@gmail.com"
+        },
+        {
+          "name": "Guangcong Luo",
+          "email": "guangcongluo@gmail.com"
+        },
+        {
+          "name": "Steven",
+          "email": "steven@ceriously.com"
+        },
+        {
+          "name": "Jan Pilzer",
+          "email": "jan.pilzer@gmx.de"
+        },
+        {
+          "name": "Leonard Martin",
+          "email": "leonard.martin@gmail.com"
+        },
+        {
+          "name": "Teddy Katz",
+          "email": "teddy.katz@gmail.com"
+        },
+        {
+          "name": "Simon Legg",
+          "email": "leggsimon@gmail.com"
+        },
+        {
+          "name": "Kin Lum",
+          "email": "kenneth.kin.lum@gmail.com"
+        },
+        {
+          "name": "David Rousselie",
+          "email": "guido.dassori@gmail.com"
+        },
+        {
+          "name": "Jože Mlakar",
+          "email": "JozeM@ixtlan-team.si"
+        },
+        {
+          "name": "happylynx",
+          "email": "happylynx@users.noreply.github.com"
+        },
+        {
+          "name": "Dominic Watson",
+          "email": "intellix@users.noreply.github.com"
+        },
+        {
+          "name": "Enrico Weigelt, metux IT consult",
+          "email": "enrico.weigelt@gr13.net"
+        },
+        {
+          "name": "Brian Beck",
+          "email": "exogen@gmail.com"
+        },
+        {
+          "name": "Ramana Venkata",
+          "email": "vramana@users.noreply.github.com"
+        },
+        {
+          "name": "Misha Kaletsky",
+          "email": "misha.kaletsky@gmail.com"
+        },
+        {
+          "name": "Andrew Schmadel",
+          "email": "schmod@users.noreply.github.com"
+        },
+        {
+          "name": "AJ Jordan",
+          "email": "alex@strugee.net"
+        },
+        {
+          "name": "Mark Banner",
+          "email": "standard8@mozilla.com"
+        },
+        {
+          "name": "Richard Simko",
+          "email": "richardsimko@users.noreply.github.com"
+        },
+        {
+          "name": "Sanketh Katta",
+          "email": "sankethkatta@gmail.com"
+        },
+        {
+          "name": "Tim Needham",
+          "email": "tim.needham@wmfs.net"
+        },
+        {
+          "name": "Leonardo Rojas",
+          "email": "leonardo.rojas@shopify.com"
+        },
+        {
+          "name": "Mark Peter Fejes",
+          "email": "fejes.mark@gmail.com"
+        },
+        {
+          "name": "Ryan Florence",
+          "email": "rpflorence@gmail.com"
+        },
+        {
+          "name": "MichaelQQ",
+          "email": "mingsian.tu@vpon.com"
+        },
+        {
+          "name": "Anders D. Johnson",
+          "email": "anders.d.johnson.developer@gmail.com"
+        },
+        {
+          "name": "Benjamin Fernandes",
+          "email": "lotharsee@gmail.com"
+        },
+        {
+          "name": "Simon Kurtz",
+          "email": "simonkurtz@gmail.com"
+        },
+        {
+          "name": "David Goss",
+          "email": "david@davidgoss.co.uk"
+        },
+        {
+          "name": "Luis Gustavo Pereira",
+          "email": "lgp1985@yahoo.com.br"
+        },
+        {
+          "name": "Amos Wenger",
+          "email": "fasterthanlime@users.noreply.github.com"
+        },
+        {
+          "name": "Samuel Marks",
+          "email": "samuelmarks@gmail.com"
+        },
+        {
+          "name": "Victor Travieso",
+          "email": "victor@grabcad.com"
+        },
+        {
+          "name": "Joshua Chaitin-Pollak",
+          "email": "jbcpollak@users.noreply.github.com"
+        },
+        {
+          "name": "Brendan Warkentin",
+          "email": "faazshift@gmail.com"
+        },
+        {
+          "name": "Scott Santucci",
+          "email": "ScottFreeCode@users.noreply.github.com"
+        },
+        {
+          "name": "Xavier Cambar",
+          "email": "xcambar@gmail.com"
+        },
+        {
+          "name": "Vikram",
+          "email": "nrvikram19@gmail.com"
+        },
+        {
+          "name": "Igor Nadj",
+          "email": "igor.nadj@shinesolutions.com"
+        },
+        {
+          "name": "Tong Li",
+          "email": "supertong@users.noreply.github.com"
+        },
+        {
+          "name": "tripu",
+          "email": "t@tripu.info"
+        },
+        {
+          "name": "Carsten Brandt",
+          "email": "mail@cebe.cc"
+        },
+        {
+          "name": "Marcin Szczepanski",
+          "email": "marcin@imagichine.com.au"
+        },
+        {
+          "name": "Josh Clow",
+          "email": "josh@textio.com"
+        },
+        {
+          "name": "Jakub Holy",
+          "email": "jakubholy@jakubholy.net"
+        },
+        {
+          "name": "Alexandra Ulsh",
+          "email": "alexandra.ulsh@gmail.com"
+        },
+        {
+          "name": "Tom MacWright",
+          "email": "tmcw@users.noreply.github.com"
+        },
+        {
+          "name": "Felicio Mununga",
+          "email": "felicio@users.noreply.github.com"
+        },
+        {
+          "name": "Gabor Szabo",
+          "email": "gszabo@users.noreply.github.com"
+        },
+        {
+          "name": "Andreas Müller",
+          "email": "mail@devmount.de"
+        },
+        {
+          "name": "Andrew Pitman",
+          "email": "apitman@users.noreply.github.com"
+        },
+        {
+          "name": "Jacob Wejendorp",
+          "email": "jacob@wejendorp.dk"
+        },
+        {
+          "name": "Alejandro López",
+          "email": "a.lopez.sanchez@outlook.es"
+        },
+        {
+          "name": "Victor Belozyorov",
+          "email": "hi@vbelozyorov.com"
+        },
+        {
+          "name": "Bradley Farias",
+          "email": "bfarias@godaddy.com"
+        },
+        {
+          "name": "Kyle E. Mitchell",
+          "email": "kyle@kemitchell.com"
+        },
+        {
+          "name": "Tuan Anh Tran",
+          "email": "me@tuananh.org"
+        },
+        {
+          "name": "Nathan Woltman",
+          "email": "nwoltman@outlook.com"
+        },
+        {
+          "name": "Kyra",
+          "email": "kyranet@users.noreply.github.com"
+        },
+        {
+          "name": "Leаh Neukirchen",
+          "email": "chneukirchen@gmail.com"
+        },
+        {
+          "name": "Kyle Spier-Swenson",
+          "email": "kyleshome@gmail.com"
+        },
+        {
+          "name": "Joe Bowbeer",
+          "email": "joe.bowbeer@gmail.com"
+        },
+        {
+          "name": "Nalin Bhardwaj",
+          "email": "6984346+nalinbhardwaj@users.noreply.github.com"
+        },
+        {
+          "name": "Nicolas Garnier",
+          "email": "ngarnier@users.noreply.github.com"
+        },
+        {
+          "name": "Vladislav Rassokhin",
+          "email": "vladrassokhin@gmail.com"
+        },
+        {
+          "name": "Josh Goldberg",
+          "email": "joshuakgoldberg@outlook.com"
+        },
+        {
+          "name": "laggingreflex",
+          "email": "laggingreflex@gmail.com"
+        },
+        {
+          "name": "Kristofer Selbekk",
+          "email": "selbekk@users.noreply.github.com"
+        },
+        {
+          "name": "Sreenivas Alapati",
+          "email": "sreenivas9alapati@gmail.com"
+        },
+        {
+          "name": "Ben Creasy",
+          "email": "ben@bencreasy.com"
+        },
+        {
+          "name": "Allan Kimmer Jensen",
+          "email": "allankimmerjensen@gmail.com"
+        },
+        {
+          "name": "rinfan",
+          "email": "rinfan@users.noreply.github.com"
+        },
+        {
+          "name": "Matt Hoyle",
+          "email": "code@deployable.co"
+        },
+        {
+          "name": "Mason Pawsey",
+          "email": "mpawsey@csub.edu"
+        },
+        {
+          "name": "Johannes Bader",
+          "email": "olydis@users.noreply.github.com"
+        },
+        {
+          "name": "Michael Zabka",
+          "email": "zabka.michael@gmail.com"
+        },
+        {
+          "name": "Bruce MacNaughton",
+          "email": "bmacnaughton@gmail.com"
+        },
+        {
+          "name": "Christopher Patty",
+          "email": "christopher.patty@aggiemail.usu.edu"
+        },
+        {
+          "name": "Max Stoiber",
+          "email": "contact@mxstbr.com"
+        },
+        {
+          "name": "Enrico Weigelt",
+          "email": "enrico.weigelt@gr13.net"
+        },
+        {
+          "name": "David Hu",
+          "email": "davidjhu@gmail.com"
+        },
+        {
+          "name": "Steven R. Loomis",
+          "email": "srl295@gmail.com"
+        },
+        {
+          "name": "Julien Deniau",
+          "email": "julien.deniau@gmail.com"
+        },
+        {
+          "name": "Prasanna Venkatesh T S",
+          "email": "vipranarayan14@gmail.com"
+        },
+        {
+          "name": "Alec Larson",
+          "email": "aleclarson@users.noreply.github.com"
+        },
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "Raymond Feng",
+          "email": "enjoyjava@gmail.com"
+        },
+        {
+          "name": "Tieme van Veen",
+          "email": "tiemevanveen@hotmail.com"
+        },
+        {
+          "name": "Finn Pauls",
+          "email": "derfinn@gmail.com"
+        },
+        {
+          "name": "Jeremy Kahn",
+          "email": "jeremyckahn@gmail.com"
+        },
+        {
+          "name": "Mertcan Mermerkaya",
+          "email": "mertcan@mermerkaya.net"
+        },
+        {
+          "name": "Will Yardley",
+          "email": "wyardley@users.noreply.github.com"
+        },
+        {
+          "name": "Matt Travi",
+          "email": "github@travi.org"
+        },
+        {
+          "name": "Solomon Victorino",
+          "email": "solomonvictorino@gmail.com"
+        },
+        {
+          "name": "Rich Trott",
+          "email": "rtrott@gmail.com"
+        },
+        {
+          "name": "Maksym Kobieliev",
+          "email": "maximaximums@gmail.com"
+        },
+        {
+          "name": "Thomas Reggi",
+          "email": "socialtr@gmail.com"
+        },
+        {
+          "name": "David Gilbertson",
+          "email": "gilbertson.david@gmail.com"
+        },
+        {
+          "name": "Rob Lourens",
+          "email": "roblourens@gmail.com"
+        },
+        {
+          "name": "Karan Thakkar",
+          "email": "karanjthakkar@gmail.com"
+        },
+        {
+          "name": "Howard T. Chiam",
+          "email": "hchiam@users.noreply.github.com"
+        },
+        {
+          "name": "Geoffrey Mattie",
+          "email": "info@geoffreymattie.com"
+        },
+        {
+          "name": "Luis Lobo Borobia",
+          "email": "luislobo@gmail.com"
+        },
+        {
+          "name": "Aaron Tribou",
+          "email": "tribou@users.noreply.github.com"
+        },
+        {
+          "name": "刘祺",
+          "email": "gucong@gmail.com"
+        },
+        {
+          "name": "Brad Johnson",
+          "email": "bradsk88@gmail.com"
+        },
+        {
+          "name": "Artem Varaksa",
+          "email": "aymfst@gmail.com"
+        },
+        {
+          "name": "Mary",
+          "email": "Ipadlover8322@gmail.com"
+        },
+        {
+          "name": "Darryl Pogue",
+          "email": "dvpdiner2@gmail.com"
+        },
+        {
+          "name": "Rick Schubert",
+          "email": "rickschubert@gmx.de"
+        },
+        {
+          "name": "Daniel W",
+          "email": "dwilches@gmail.com"
+        },
+        {
+          "name": "XhmikosR",
+          "email": "xhmikosr@gmail.com"
+        },
+        {
+          "name": "Martin Kühl",
+          "email": "mkhl@users.noreply.github.com"
+        },
+        {
+          "name": "Valentin Ouvrard",
+          "email": "valentin210594@gmail.com"
+        },
+        {
+          "name": "Noah Benham",
+          "email": "noahbenham@users.noreply.github.com"
+        },
+        {
+          "name": "Brian Olore",
+          "email": "brian@olore.net"
+        },
+        {
+          "name": "Mat Warger",
+          "email": "mwarger@gmail.com"
+        },
+        {
+          "name": "Federico Rampazzo",
+          "email": "frampone@gmail.com"
+        },
+        {
+          "name": "SneakyFish5",
+          "email": "32284796+SneakyFish5@users.noreply.github.com"
+        },
+        {
+          "name": "Nikki Everett",
+          "email": "neverett@users.noreply.github.com"
+        },
+        {
+          "name": "Erik Price",
+          "email": "github@erikprice.net"
+        },
+        {
+          "name": "Lars Willighagen",
+          "email": "lars.willighagen@gmail.com"
+        },
+        {
+          "name": "Kevin Gibbons",
+          "email": "bakkot@gmail.com"
+        },
+        {
+          "name": "Maarten Balliauw",
+          "email": "maarten@balliauw.be"
+        },
+        {
+          "name": "Mehdy Dara",
+          "email": "mdara@eleven-labs.com"
+        },
+        {
+          "name": "Robert Kielty",
+          "email": "rob.kielty@gmail.com"
+        },
+        {
+          "name": "Scott Trinh",
+          "email": "scottyparade@gmail.com"
+        },
+        {
+          "name": "Hugo",
+          "email": "hugovk@users.noreply.github.com"
+        },
+        {
+          "name": "Jacob",
+          "email": "jakeincanada@icloud.com"
+        },
+        {
+          "name": "Joe Bottigliero",
+          "email": "joe@bottigliero.com"
+        },
+        {
+          "name": "Nikolai Vavilov",
+          "email": "vvnicholas@gmail.com"
+        },
+        {
+          "name": "Kelvin Jin",
+          "email": "kelvinjin@google.com"
+        },
+        {
+          "name": "乱序",
+          "email": "midare@utakana.de"
+        },
+        {
+          "name": "Audrey Eschright",
+          "email": "audrey@npmjs.com"
+        },
+        {
+          "name": "Xu Meng",
+          "email": "dmabupt@gmail.com"
+        },
+        {
+          "name": "George",
+          "email": "george.taveras1231@gmail.com"
+        },
+        {
+          "name": "Beni von Cheni",
+          "email": "benjaminlchen@gmail.com"
+        },
+        {
+          "name": "Frédéric Harper",
+          "email": "fharper@npmjs.com"
+        },
+        {
+          "name": "Johannes Würbach",
+          "email": "johannes.wuerbach@googlemail.com"
+        },
+        {
+          "name": "ƇʘƁ̆ąƇ́",
+          "email": "anchnk@users.noreply.github.com"
+        },
+        {
+          "name": "Eli Doran",
+          "email": "eli@elidoran.com"
+        },
+        {
+          "name": "Tobias Koppers",
+          "email": "tobias.koppers@googlemail.com"
+        },
+        {
+          "name": "Grey Baker",
+          "email": "greysteil@gmail.com"
+        },
+        {
+          "name": "JT Turner",
+          "email": "jtwebman@gmail.com"
+        },
+        {
+          "name": "Audrey Eschright",
+          "email": "audrey@lifeofaudrey.com"
+        },
+        {
+          "name": "Alexander Gudulin",
+          "email": "alexandr.gudulin@gmail.com"
+        },
+        {
+          "name": "Philipp Hagemeister",
+          "email": "phihag@phihag.de"
+        },
+        {
+          "name": "Amadou Sall",
+          "email": "ahasall.dev@gmail.com"
+        },
+        {
+          "name": "Chris Manson",
+          "email": "mansona@users.noreply.github.com"
+        },
+        {
+          "name": "vlasy",
+          "email": "vlasy@users.noreply.github.com"
+        },
+        {
+          "name": "Emilis Dambauskas",
+          "email": "emilis.dambauskas@tokenmill.lt",
+          "url": "Tokenmill"
+        },
+        {
+          "name": "George Czabania",
+          "email": "george@mish.guru"
+        },
+        {
+          "name": "Jonathan Underwood",
+          "email": "junderwood@bitcoinbank.co.jp"
+        },
+        {
+          "name": "Nick Graef",
+          "email": "nicholas.a.graef@gmail.com"
+        },
+        {
+          "name": "James George",
+          "email": "jamesgeorge998001@gmail.com"
+        },
+        {
+          "name": "John O'Sullivan",
+          "email": "j.osullivan42@gmail.com"
+        },
+        {
+          "name": "ossdev",
+          "email": "ossdev@puresoftware.com"
+        },
+        {
+          "name": "Raphael Goulais",
+          "email": "raphael.goulais@f5c.fr"
+        },
+        {
+          "name": "COURIER, CALEB [AG/1000]",
+          "email": "caleb.courier@monsanto.com"
+        },
+        {
+          "name": "CalebCourier",
+          "email": "caleb.courier@monsanto.com"
+        },
+        {
+          "name": "Florian Keller",
+          "email": "florian.keller@wire.com"
+        },
+        {
+          "name": "Sreeram Jayan",
+          "email": "sreeram.jayan@cerner.com"
+        },
+        {
+          "name": "--get",
+          "email": "lars.willighagen@gmail.com"
+        },
+        {
+          "name": "raywu0123",
+          "email": "b05901189@ntu.edu.tw"
+        },
+        {
+          "name": "Iván Reinoso García",
+          "email": "ireinoso@plainconcepts.com"
+        },
+        {
+          "name": "Roy Marples",
+          "email": "roy@marples.name"
+        },
+        {
+          "name": "Robert James Gabriel",
+          "email": "robert_gabriel@outlook.com"
+        },
+        {
+          "name": "John Firebaugh",
+          "email": "john.firebaugh@gmail.com"
+        },
+        {
+          "name": "Kitten King",
+          "email": "hi@kittenking.me"
+        },
+        {
+          "name": "Claudia Hernández",
+          "email": "cghr1990@gmail.com"
+        },
+        {
+          "name": "Artem Sapegin",
+          "email": "artem@sapegin.ru"
+        },
+        {
+          "name": "Márton Salomváry",
+          "email": "salomvary@gmail.com"
+        },
+        {
+          "name": "gall0ws",
+          "email": "g4ll0ws@gmail.com"
+        },
+        {
+          "name": "Olivier Chevet",
+          "email": "olivr70@outlook.fr"
+        },
+        {
+          "name": "Maël Nison",
+          "email": "nison.mael@gmail.com"
+        },
+        {
+          "name": "Sara Ahbabou",
+          "email": "ahbabousara@gmail.com"
+        },
+        {
+          "name": "Gareth Jones",
+          "email": "Jones258@Gmail.com"
+        },
+        {
+          "name": "Ruy Adorno",
+          "email": "ruyadorno@hotmail.com"
+        },
+        {
+          "name": "Michael Perrotte",
+          "email": "mike@npmjs.com"
+        },
+        {
+          "name": "Ben Blank",
+          "email": "ben.blank+github@gmail.com"
+        },
+        {
+          "name": "Christian Clauss",
+          "email": "cclauss@me.com"
+        },
+        {
+          "name": "Nikita Lebedev",
+          "email": "bloomber111@gmail.com"
+        },
+        {
+          "name": "Henrik Gemal",
+          "email": "henrik@gemal.dk"
+        },
+        {
+          "name": "Philip Harrison",
+          "email": "philip@mailharrison.com"
+        },
+        {
+          "name": "Jason Etcovitch",
+          "email": "jasonetco@github.com"
+        },
+        {
+          "name": "Darcy Clarke",
+          "email": "darcy@darcyclarke.me"
+        },
+        {
+          "name": "orion",
+          "email": "oletizi@mac.com"
+        },
+        {
+          "name": "NoDocCat",
+          "email": "nodoccat@outlook.com"
+        },
+        {
+          "name": "joan xie",
+          "email": "w4ergf@qq.com"
+        },
+        {
+          "name": "Amal Hussein",
+          "email": "amal@npmjs.com"
+        },
+        {
+          "name": "Brett Zamir",
+          "email": "brettz9@yahoo.com"
+        },
+        {
+          "name": "Menelaos Kotsollaris",
+          "email": "mkotsollaris@users.noreply.github.com"
+        },
+        {
+          "name": "Mehdi Hasan Khan",
+          "email": "mhasan@omicronlab.com"
+        },
+        {
+          "name": "Craig Loewen",
+          "email": "crloewen@microsoft.com"
+        },
+        {
+          "name": "Fighting-Jack",
+          "email": "574637316@qq.com"
+        },
+        {
+          "name": "Bakel, Roel van",
+          "email": "roel.vanbakel@oce.com"
+        },
+        {
+          "name": "Charlie West-Toebe",
+          "email": "38671683+Hoidberg@users.noreply.github.com"
+        },
+        {
+          "name": "Richard Lau",
+          "email": "riclau@uk.ibm.com"
+        },
+        {
+          "name": "Felix Yan",
+          "email": "felixonmars@archlinux.org"
+        },
+        {
+          "name": "Zhenya Vinogradov",
+          "email": "zhenyavinogradov@gmail.com"
+        },
+        {
+          "name": "Rafael Hengles",
+          "email": "rhengles@gmail.com"
+        },
+        {
+          "name": "Jan-Philip Gehrcke",
+          "email": "jp@opstrace.com"
+        },
+        {
+          "name": "Caleb Sacks",
+          "email": "16855387+clabe45@users.noreply.github.com"
+        }
+      ],
+      "readme": "npm(1) -- a JavaScript package manager\n==============================\n\n[![Build Status](https://img.shields.io/travis/npm/cli/latest.svg)](https://travis-ci.org/npm/cli)\n\n## SYNOPSIS\n\nThis is just enough info to get you up and running.\n\nMuch more info will be available via `npm help` once it's installed.\n\n## IMPORTANT\n\n**You need node v6 or higher to run this program.**\n\nTo install an old **and unsupported** version of npm that works on node v5\nand prior, clone the git repo and dig through the old tags and branches.\n\n**npm is configured to use npm, Inc.'s public registry at\n<https://registry.npmjs.org> by default.** Use of the npm public registry\nis subject to terms of use available at <https://www.npmjs.com/policies/terms>.\n\nYou can configure npm to use any compatible registry you\nlike, and even run your own registry. Check out the [doc on\nregistries](https://docs.npmjs.com/misc/registry).\n\n## Super Easy Install\n\nnpm is bundled with [node](https://nodejs.org/en/download/).\n\n### Windows Computers\n\n[Get the MSI](https://nodejs.org/en/download/).  npm is in it.\n\n### Apple Macintosh Computers\n\n[Get the pkg](https://nodejs.org/en/download/).  npm is in it.\n\n### Other Sorts of Unices\n\nRun `make install`.  npm will be installed with node.\n\nIf you want a more fancy pants install (a different version, customized\npaths, etc.) then read on.\n\n## Fancy Install (Unix)\n\nThere's a pretty robust install script at\n<https://www.npmjs.com/install.sh>.  You can download that and run it.\n\nHere's an example using curl:\n\n```sh\ncurl -L https://www.npmjs.com/install.sh | sh\n```\n\n### Slightly Fancier\n\nYou can set any npm configuration params with that script:\n\n```sh\nnpm_config_prefix=/some/path sh install.sh\n```\n\nOr, you can run it in uber-debuggery mode:\n\n```sh\nnpm_debug=1 sh install.sh\n```\n\n### Even Fancier\n\nGet the code with git.  Use `make` to build the docs and do other stuff.\nIf you plan on hacking on npm, `make link` is your friend.\n\nIf you've got the npm source code, you can also semi-permanently set\narbitrary config keys using the `./configure --key=val ...`, and then\nrun npm commands by doing `node bin/npm-cli.js <command> <args>`.  (This is helpful\nfor testing, or running stuff without actually installing npm itself.)\n\n## Windows Install or Upgrade\n\nMany improvements for Windows users have been made in npm 3 - you will have a better\nexperience if you run a recent version of npm. To upgrade, either use [Microsoft's\nupgrade tool](https://github.com/felixrieseberg/npm-windows-upgrade),\n[download a new version of Node](https://nodejs.org/en/download/),\nor follow the Windows upgrade instructions in the\n[Installing/upgrading npm](https://npm.community/t/installing-upgrading-npm/251/2) post.\n\nIf that's not fancy enough for you, then you can fetch the code with\ngit, and mess with it directly.\n\n## Installing on Cygwin\n\nNo.\n\n## Uninstalling\n\nSo sad to see you go.\n\n```sh\nsudo npm uninstall npm -g\n```\nOr, if that fails,\n\n```sh\nsudo make uninstall\n```\n\n## More Severe Uninstalling\n\nUsually, the above instructions are sufficient.  That will remove\nnpm, but leave behind anything you've installed.\n\nIf you would like to remove all the packages that you have installed,\nthen you can use the `npm ls` command to find them, and then `npm rm` to\nremove them.\n\nTo remove cruft left behind by npm 0.x, you can use the included\n`clean-old.sh` script file.  You can run it conveniently like this:\n\n```sh\nnpm explore npm -g -- sh scripts/clean-old.sh\n```\n\nnpm uses two configuration files, one for per-user configs, and another\nfor global (every-user) configs.  You can view them by doing:\n\n```sh\nnpm config get userconfig   # defaults to ~/.npmrc\nnpm config get globalconfig # defaults to /usr/local/etc/npmrc\n```\n\nUninstalling npm does not remove configuration files by default.  You\nmust remove them yourself manually if you want them gone.  Note that\nthis means that future npm installs will not remember the settings that\nyou have chosen.\n\n## More Docs\n\nCheck out the [docs](https://docs.npmjs.com/).\n\nYou can use the `npm help` command to read any of them.\n\nIf you're a developer, and you want to use npm to publish your program,\nyou should [read this](https://docs.npmjs.com/misc/developers).\n\n## BUGS\n\nWhen you find issues, please report them:\n\n* web:\n  <https://npm.community/c/bugs>\n\nBe sure to include *all* of the output from the npm command that didn't work\nas expected.  The `npm-debug.log` file is also helpful to provide.\n\n## SEE ALSO\n\n* npm(1)\n* npm-help(1)\n",
+      "readmeFilename": "README.md",
+      "_id": "npm@6.13.7",
+      "optionalDependencies": {},
+      "_dependencies": {
+        "JSONStream": "^1.3.5",
+        "abbrev": "~1.1.1",
+        "ansicolors": "~0.3.2",
+        "ansistyles": "~0.1.3",
+        "aproba": "^2.0.0",
+        "archy": "~1.0.0",
+        "bin-links": "^1.1.7",
+        "bluebird": "^3.5.5",
+        "byte-size": "^5.0.1",
+        "cacache": "^12.0.3",
+        "call-limit": "^1.1.1",
+        "chownr": "^1.1.3",
+        "ci-info": "^2.0.0",
+        "cli-columns": "^3.1.2",
+        "cli-table3": "^0.5.1",
+        "cmd-shim": "^3.0.3",
+        "columnify": "~1.5.4",
+        "config-chain": "^1.1.12",
+        "detect-indent": "~5.0.0",
+        "detect-newline": "^2.1.0",
+        "dezalgo": "~1.0.3",
+        "editor": "~1.0.0",
+        "figgy-pudding": "^3.5.1",
+        "find-npm-prefix": "^1.0.2",
+        "fs-vacuum": "~1.2.10",
+        "fs-write-stream-atomic": "~1.0.10",
+        "gentle-fs": "^2.3.0",
+        "glob": "^7.1.4",
+        "graceful-fs": "^4.2.3",
+        "has-unicode": "~2.0.1",
+        "hosted-git-info": "^2.8.5",
+        "iferr": "^1.0.2",
+        "infer-owner": "^1.0.4",
+        "inflight": "~1.0.6",
+        "inherits": "^2.0.4",
+        "ini": "^1.3.5",
+        "init-package-json": "^1.10.3",
+        "is-cidr": "^3.0.0",
+        "json-parse-better-errors": "^1.0.2",
+        "lazy-property": "~1.0.0",
+        "libcipm": "^4.0.7",
+        "libnpm": "^3.0.1",
+        "libnpmaccess": "^3.0.2",
+        "libnpmhook": "^5.0.3",
+        "libnpmorg": "^1.0.1",
+        "libnpmsearch": "^2.0.2",
+        "libnpmteam": "^1.0.2",
+        "libnpx": "^10.2.2",
+        "lock-verify": "^2.1.0",
+        "lockfile": "^1.0.4",
+        "lodash._baseuniq": "~4.6.0",
+        "lodash.clonedeep": "~4.5.0",
+        "lodash.union": "~4.6.0",
+        "lodash.uniq": "~4.5.0",
+        "lodash.without": "~4.4.0",
+        "lru-cache": "^5.1.1",
+        "meant": "~1.0.1",
+        "mississippi": "^3.0.0",
+        "mkdirp": "~0.5.1",
+        "move-concurrently": "^1.0.1",
+        "node-gyp": "^5.0.7",
+        "nopt": "~4.0.1",
+        "normalize-package-data": "^2.5.0",
+        "npm-audit-report": "^1.3.2",
+        "npm-cache-filename": "~1.0.2",
+        "npm-install-checks": "^3.0.2",
+        "npm-lifecycle": "^3.1.4",
+        "npm-package-arg": "^6.1.1",
+        "npm-packlist": "^1.4.7",
+        "npm-pick-manifest": "^3.0.2",
+        "npm-profile": "^4.0.2",
+        "npm-registry-fetch": "^4.0.2",
+        "npm-user-validate": "~1.0.0",
+        "npmlog": "~4.1.2",
+        "once": "~1.4.0",
+        "opener": "^1.5.1",
+        "osenv": "^0.1.5",
+        "pacote": "^9.5.12",
+        "path-is-inside": "~1.0.2",
+        "promise-inflight": "~1.0.1",
+        "qrcode-terminal": "^0.12.0",
+        "query-string": "^6.8.2",
+        "qw": "~1.0.1",
+        "read": "~1.0.7",
+        "read-cmd-shim": "^1.0.5",
+        "read-installed": "~4.0.3",
+        "read-package-json": "^2.1.1",
+        "read-package-tree": "^5.3.1",
+        "readable-stream": "^3.4.0",
+        "readdir-scoped-modules": "^1.1.0",
+        "request": "^2.88.0",
+        "retry": "^0.12.0",
+        "rimraf": "^2.6.3",
+        "safe-buffer": "^5.1.2",
+        "semver": "^5.7.1",
+        "sha": "^3.0.0",
+        "slide": "~1.1.6",
+        "sorted-object": "~2.0.1",
+        "sorted-union-stream": "~2.1.3",
+        "ssri": "^6.0.1",
+        "stringify-package": "^1.0.1",
+        "tar": "^4.4.13",
+        "text-table": "~0.2.0",
+        "tiny-relative-date": "^1.3.0",
+        "uid-number": "0.0.6",
+        "umask": "~1.1.0",
+        "unique-filename": "^1.1.1",
+        "unpipe": "~1.0.0",
+        "update-notifier": "^2.5.0",
+        "uuid": "^3.3.3",
+        "validate-npm-package-license": "^3.0.4",
+        "validate-npm-package-name": "~3.0.0",
+        "which": "^1.3.1",
+        "worker-farm": "^1.7.0",
+        "write-file-atomic": "^2.4.3",
+        "debuglog": "*",
+        "imurmurhash": "*",
+        "lodash._baseindexof": "*",
+        "lodash._bindcallback": "*",
+        "lodash._cacheindexof": "*",
+        "lodash._createcache": "*",
+        "lodash._getnative": "*",
+        "lodash.restparam": "*"
+      },
+      "path": "C:\\Program Files\\nodejs\\node_modules\\npm",
+      "error": "[Circular]",
+      "extraneous": false
+    },
+    "webpack-bundle-analyzer": {
+      "_from": "webpack-bundle-analyzer",
+      "_id": "webpack-bundle-analyzer@3.6.1",
+      "_inBundle": false,
+      "_integrity": "sha512-Nfd8HDwfSx1xBwC+P8QMGvHAOITxNBSvu/J/mCJvOwv+G4VWkU7zir9SSenTtyCi0LnVtmsc7G5SZo1uV+bxRw==",
+      "_location": "/webpack-bundle-analyzer",
+      "_phantomChildren": {},
+      "_requested": {
+        "type": "tag",
+        "registry": true,
+        "raw": "webpack-bundle-analyzer",
+        "name": "webpack-bundle-analyzer",
+        "escapedName": "webpack-bundle-analyzer",
+        "rawSpec": "",
+        "saveSpec": "[Circular]",
+        "fetchSpec": "latest"
+      },
+      "_requiredBy": [
+        "#USER"
+      ],
+      "_resolved": "https://registry.npmjs.org/webpack-bundle-analyzer/-/webpack-bundle-analyzer-3.6.1.tgz",
+      "_shasum": "bdb637c2304424f2fbff9a950c7be42a839ae73b",
+      "_spec": "webpack-bundle-analyzer",
+      "_where": "D:\\projects\\corona-10p\\corona-virus-ml-forecasting\\corona-fe",
+      "author": {
+        "name": "Yury Grunin",
+        "email": "grunin.ya@ya.ru"
+      },
+      "bin": {
+        "webpack-bundle-analyzer": "lib/bin/analyzer.js"
+      },
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/webpack-bundle-analyzer/issues"
+      },
+      "changelog": "https://github.com/webpack-contrib/webpack-bundle-analyzer/blob/master/CHANGELOG.md",
+      "deprecated": false,
+      "description": "Webpack plugin and CLI utility that represents bundle content as convenient interactive zoomable treemap",
+      "devDependencies": {
+        "@babel/core": "7.4.3",
+        "@babel/plugin-proposal-class-properties": "7.4.0",
+        "@babel/plugin-proposal-decorators": "7.4.0",
+        "@babel/plugin-transform-runtime": "7.4.3",
+        "@babel/polyfill": "7.4.3",
+        "@babel/preset-env": "7.4.3",
+        "@babel/preset-react": "7.0.0",
+        "@babel/register": "7.4.0",
+        "@babel/runtime": "7.4.3",
+        "autoprefixer": "9.5.1",
+        "babel-eslint": "10.0.1",
+        "babel-loader": "8.0.5",
+        "babel-plugin-lodash": "3.3.4",
+        "chai": "4.2.0",
+        "chai-subset": "1.6.0",
+        "classnames": "2.2.6",
+        "core-js": "2.6.5",
+        "css-loader": "2.1.1",
+        "cssnano": "4.1.10",
+        "del": "4.1.0",
+        "eslint": "5.16.0",
+        "eslint-config-th0r": "2.0.0",
+        "eslint-config-th0r-react": "2.0.0",
+        "eslint-plugin-react": "7.12.4",
+        "exports-loader": "0.7.0",
+        "gulp": "4.0.2",
+        "gulp-babel": "8.0.0",
+        "mobx": "5.9.4",
+        "mobx-preact": "3.0.0",
+        "mocha": "6.2.2",
+        "nightmare": "3.0.1",
+        "postcss-icss-values": "2.0.2",
+        "postcss-loader": "3.0.0",
+        "preact": "8.4.2",
+        "stream-combiner2": "1.1.1",
+        "style-loader": "0.23.1",
+        "terser-webpack-plugin": "1.4.3",
+        "url-loader": "1.1.2",
+        "webpack": "4.42.0",
+        "webpack-cli": "3.3.11",
+        "webpack-dev-server": "3.10.3"
+      },
+      "engines": {
+        "node": ">= 6.14.4"
+      },
+      "files": [
+        "public",
+        "lib",
+        "src",
+        "views"
+      ],
+      "homepage": "https://github.com/webpack-contrib/webpack-bundle-analyzer",
+      "keywords": [
+        "webpack",
+        "bundle",
+        "analyzer",
+        "modules",
+        "size",
+        "interactive",
+        "chart",
+        "treemap",
+        "zoomable",
+        "zoom"
+      ],
+      "license": "MIT",
+      "main": "lib/index.js",
+      "name": "webpack-bundle-analyzer",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/webpack-bundle-analyzer.git"
+      },
+      "scripts": {
+        "build": "gulp build",
+        "lint": "eslint --ext js,jsx .",
+        "npm-publish": "npm run lint && npm run build && npm test && npm publish",
+        "start": "gulp watch",
+        "test": "mocha --exit --require @babel/register",
+        "test-dev": "mocha --watch --require @babel/register"
+      },
+      "version": "3.6.1",
+      "readme": "[![npm][npm]][npm-url]\n[![node][node]][node-url]\n[![deps][deps]][deps-url]\n[![tests][tests]][tests-url]\n[![downloads][downloads]][downloads-url]\n\n<div align=\"center\">\n  <a href=\"https://github.com/webpack/webpack\">\n    <img width=\"200\" height=\"200\"\n      src=\"https://webpack.js.org/assets/icon-square-big.svg\">\n  </a>\n  <h1>Webpack Bundle Analyzer</h1>\n  <p>Visualize size of webpack output files with an interactive zoomable treemap.</p>\n</div>\n\n<h2 align=\"center\">Install</h2>\n\n```bash\n# NPM\nnpm install --save-dev webpack-bundle-analyzer\n# Yarn\nyarn add -D webpack-bundle-analyzer\n```\n\n<h2 align=\"center\">Usage (as a plugin)</h2>\n\n```js\nconst BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;\n\nmodule.exports = {\n  plugins: [\n    new BundleAnalyzerPlugin()\n  ]\n}\n```\n\nIt will create an interactive treemap visualization of the contents of all your bundles.\n\n![webpack bundle analyzer zoomable treemap](https://cloud.githubusercontent.com/assets/302213/20628702/93f72404-b338-11e6-92d4-9a365550a701.gif)\n\nThis module will help you:\n\n1. Realize what's *really* inside your bundle\n2. Find out what modules make up the most of its size\n3. Find modules that got there by mistake\n4. Optimize it!\n\nAnd the best thing is it supports minified bundles! It parses them to get real size of bundled modules.\nAnd it also shows their gzipped sizes!\n\n<h2 align=\"center\">Options (for plugin)</h2>\n\n```js\nnew BundleAnalyzerPlugin(options?: object)\n```\n\n|Name|Type|Description|\n|:--:|:--:|:----------|\n|**`analyzerMode`**|One of: `server`, `static`, `disabled`|Default: `server`. In `server` mode analyzer will start HTTP server to show bundle report. In `static` mode single HTML file with bundle report will be generated. In `disabled` mode you can use this plugin to just generate Webpack Stats JSON file by setting `generateStatsFile` to `true`. |\n|**`analyzerHost`**|`{String}`|Default: `127.0.0.1`. Host that will be used in `server` mode to start HTTP server.|\n|**`analyzerPort`**|`{Number}` or `auto`|Default: `8888`. Port that will be used in `server` mode to start HTTP server.|\n|**`reportFilename`**|`{String}`|Default: `report.html`. Path to bundle report file that will be generated in `static` mode. It can be either an absolute path or a path relative to a bundle output directory (which is output.path in webpack config).|\n|**`defaultSizes`**|One of: `stat`, `parsed`, `gzip`|Default: `parsed`. Module sizes to show in report by default. [Size definitions](#size-definitions) section describes what these values mean.|\n|**`openAnalyzer`**|`{Boolean}`|Default: `true`. Automatically open report in default browser.|\n|**`generateStatsFile`**|`{Boolean}`|Default: `false`. If `true`, webpack stats JSON file will be generated in bundle output directory|\n|**`statsFilename`**|`{String}`|Default: `stats.json`. Name of webpack stats JSON file that will be generated if `generateStatsFile` is `true`. It can be either an absolute path or a path relative to a bundle output directory (which is output.path in webpack config).|\n|**`statsOptions`**|`null` or `{Object}`|Default: `null`. Options for `stats.toJson()` method. For example you can exclude sources of your modules from stats file with `source: false` option. [See more options here](https://webpack.js.org/configuration/stats/). |\n|**`excludeAssets`**|`{null\\|pattern\\|pattern[]}` where `pattern` equals to `{String\\|RegExp\\|function}`|Default: `null`. Patterns that will be used to match against asset names to exclude them from the report. If pattern is a string it will be converted to RegExp via `new RegExp(str)`. If pattern is a function it should have the following signature `(assetName: string) => boolean` and should return `true` to *exclude* matching asset. If multiple patterns are provided asset should match at least one of them to be excluded. |\n|**`logLevel`**|One of: `info`, `warn`, `error`, `silent`|Default: `info`. Used to control how much details the plugin outputs.|\n\n<h2 align=\"center\">Usage (as a CLI utility)</h2>\n\nYou can analyze an existing bundle if you have a webpack stats JSON file.\n\nYou can generate it using `BundleAnalyzerPlugin` with `generateStatsFile` option set to `true` or with this simple\ncommand:\n\n```bash\nwebpack --profile --json > stats.json\n```\n\nIf you're on Windows and using PowerShell, you can generate the stats file with this command to [avoid BOM issues](https://github.com/webpack-contrib/webpack-bundle-analyzer/issues/47):\n\n```\nwebpack --profile --json | Out-file 'stats.json' -Encoding OEM\n```\n\nThen you can run the CLI tool.\n\n```\nwebpack-bundle-analyzer bundle/output/path/stats.json\n```\n\n<h2 align=\"center\">Options (for CLI)</h2>\n\n```bash\nwebpack-bundle-analyzer <bundleStatsFile> [bundleDir] [options]\n```\n\nArguments are documented below:\n\n### `bundleStatsFile`\n\nPath to webpack stats JSON file\n\n### `bundleDir`\n\nDirectory containing all generated bundles.\n\n### `options`\n\n```\n  -V, --version               output the version number\n  -m, --mode <mode>           Analyzer mode. Should be `server` or `static`.\n                              In `server` mode analyzer will start HTTP server to show bundle report.\n                              In `static` mode single HTML file with bundle report will be generated. (default: server)\n  -h, --host <host>           Host that will be used in `server` mode to start HTTP server. (default: 127.0.0.1)\n  -p, --port <n>              Port that will be used in `server` mode to start HTTP server. Should be a number or `auto` (default: 8888)\n  -r, --report <file>         Path to bundle report file that will be generated in `static` mode. (default: report.html)\n  -s, --default-sizes <type>  Module sizes to show in treemap by default.\n                              Possible values: stat, parsed, gzip (default: parsed)\n  -O, --no-open               Don't open report in default browser automatically.\n  -e, --exclude <regexp>      Assets that should be excluded from the report.\n                              Can be specified multiple times.\n  -l, --log-level <level>     Log level.\n                              Possible values: debug, info, warn, error, silent (default: info)\n  -h, --help                  output usage information\n```\n\n<h2 align=\"center\" id=\"size-definitions\">Size definitions</h2>\n\nwebpack-bundle-analyzer reports three values for sizes. `defaultSizes` can be used to control which of these is shown by default. The different reported sizes are:\n\n### `stat`\n\nThis is the \"input\" size of your files, before any transformations like\nminification.\n\nIt is called \"stat size\" because it's obtained from Webpack's\n[stats object](https://webpack.js.org/configuration/stats/).\n\n### `parsed`\n\nThis is the \"output\" size of your files. If you're using a Webpack plugin such\nas Uglify, then this value will reflect the minified size of your code.\n\n### `gzip`\n\nThis is the size of running the parsed bundles/modules through gzip compression.\n\n<h2 align=\"center\">Selecting Which Chunks to Display</h2>\n\nWhen opened, the report displays all of the Webpack chunks for your project. It's possible to filter to a more specific list of chunks by using the sidebar or the chunk context menu.\n\n### Sidebar\n\nThe Sidebar Menu can be opened by clicking the `>` button at the top left of the report. You can select or deselect chunks to display under the \"Show chunks\" heading there.\n\n### Chunk Context Menu\n\nThe Chunk Context Menu can be opened by right-clicking or `Ctrl`-clicking on a specific chunk in the report. It provides the following options:\n\n * **Hide chunk:** Hides the selected chunk\n * **Hide all other chunks:** Hides all chunks besides the selected one\n * **Show all chunks:** Un-hides any hidden chunks, returning the report to its initial, unfiltered view\n\n<h2 align=\"center\">Troubleshooting</h2>\n\n### I don't see `gzip` or `parsed` sizes, it only shows `stat` size\n\nIt happens when `webpack-bundle-analyzer` analyzes files that don't actually exist in your file system, for example when you work with `webpack-dev-server` that keeps all the files in RAM. If you use `webpack-bundle-analyzer` as a plugin you won't get any errors, however if you run it via CLI you get the error message in terminal:\n```\nCouldn't parse bundle asset \"your_bundle_name.bundle.js\".\nAnalyzer will use module sizes from stats file.\n```\nTo get more information about it you can read [issue #147](https://github.com/webpack-contrib/webpack-bundle-analyzer/issues/147).\n\n\n<h2 align=\"center\">Maintainers</h2>\n\n<table>\n  <tbody>\n    <tr>\n      <td align=\"center\">\n        <img width=\"150\" height=\"150\"\n        src=\"https://avatars3.githubusercontent.com/u/302213?v=4&s=150\">\n        </br>\n        <a href=\"https://github.com/th0r\">Yuriy Grunin</a>\n      </td>\n      <td align=\"center\">\n        <img width=\"150\" height=\"150\"\n        src=\"https://avatars3.githubusercontent.com/u/482561?v=4&s=150\">\n        </br>\n        <a href=\"https://github.com/valscion\">Vesa Laakso</a>\n      </td>\n    </tr>\n  <tbody>\n</table>\n\n\n[npm]: https://img.shields.io/npm/v/webpack-bundle-analyzer.svg\n[npm-url]: https://npmjs.com/package/webpack-bundle-analyzer\n\n[node]: https://img.shields.io/node/v/webpack-bundle-analyzer.svg\n[node-url]: https://nodejs.org\n\n[deps]: https://david-dm.org/webpack-contrib/webpack-bundle-analyzer.svg\n[deps-url]: https://david-dm.org/webpack-contrib/webpack-bundle-analyzer\n\n[tests]: http://img.shields.io/travis/webpack-contrib/webpack-bundle-analyzer.svg\n[tests-url]: https://travis-ci.org/webpack-contrib/webpack-bundle-analyzer\n\n[downloads]: https://img.shields.io/npm/dt/webpack-bundle-analyzer.svg\n[downloads-url]: https://npmjs.com/package/webpack-bundle-analyzer\n\n<h2 align=\"center\">Contributing</h2>\n\nCheck out [CONTRIBUTING.md](./CONTRIBUTING.md) for instructions on contributing :tada:\n",
+      "readmeFilename": "README.md",
+      "optionalDependencies": {},
+      "_dependencies": {
+        "acorn": "^7.1.1",
+        "acorn-walk": "^7.1.1",
+        "bfj": "^6.1.1",
+        "chalk": "^2.4.1",
+        "commander": "^2.18.0",
+        "ejs": "^2.6.1",
+        "express": "^4.16.3",
+        "filesize": "^3.6.1",
+        "gzip-size": "^5.0.0",
+        "lodash": "^4.17.15",
+        "mkdirp": "^0.5.1",
+        "opener": "^1.5.1",
+        "ws": "^6.0.0"
+      },
+      "path": "C:\\Program Files\\nodejs\\node_modules\\webpack-bundle-analyzer",
+      "error": "[Circular]",
+      "extraneous": false
+    }
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "_dependencies": {},
+  "path": "C:\\Program Files\\nodejs",
+  "error": {
+    "errno": -4058,
+    "code": "ENOENT",
+    "syscall": "open",
+    "path": "C:\\Users\\defaultuser0.DESKTOP-DG74VKH\\nvm\\v13.11.0\\package.json"
+  },
+  "extraneous": false
+}

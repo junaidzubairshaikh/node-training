@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "express": {
+      "version": "4.17.1",
+      "from": "github:expressjs/express",
+      "resolved": "github:expressjs/express#1b48a5cc3cdc6ee465991952990e14985cbfc042"
+    }
+  }
+}
