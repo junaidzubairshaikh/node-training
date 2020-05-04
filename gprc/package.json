@@ -1,0 +1,21 @@
+{
+  "name": "gprc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "call": "grpcc -i  -p protos/hello.proto -a 127.0.0.1:5100"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.4",
+    "grpc": "^1.24.2",
+    "mali": "^0.20.0"
+  },
+  "devDependencies": {
+    "grpcc": "^1.1.3"
+  }
+}

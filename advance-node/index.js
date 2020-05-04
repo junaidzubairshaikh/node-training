@@ -9,3 +9,6 @@
 
 const moduleFile=require('./module/m1');
 console.log('The require is main ',require.main===module);
+
+
+// process.stdin.pipe(process.stdout);
